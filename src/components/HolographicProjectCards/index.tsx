@@ -196,6 +196,8 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                       <Image
                         src={project.mobileImage}
                         alt={project.mobileImageAlt}
+                        width={2000}
+                        height={2000}
                         className={styles.previewImage}
                       />
                       <div className={styles.previewOverlay}>
@@ -212,6 +214,8 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                       <Image
                         src={project.desktopImage}
                         alt={project.desktopImageAlt}
+                        width={2000}
+                        height={2000}
                         className={styles.previewImage}
                       />
                       <div className={styles.previewOverlay}>
