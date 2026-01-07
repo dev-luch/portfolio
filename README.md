@@ -1,29 +1,19 @@
-# 🚀 Portfólio - Lucas Christian
+# 🚀 Portfolio - Lucas Christian
 
-Este repositório contém o código-fonte do meu portfólio profissional, desenvolvido para apresentar meus projetos, habilidades e experiências de forma clara e acessível.
+## 👨‍💻 About me
 
-## 👨‍💻 Sobre
+I'm a software developer focused on complete solutions, from conception to delivery. Passionate about technology, automation, and intuitive interfaces, I enjoy transforming ideas into functional and efficient applications.
 
-Sou desenvolvedor de software com foco em soluções completas, desde a concepção até a entrega. Apaixonado por tecnologia, automação e interfaces intuitivas, gosto de transformar ideias em aplicações funcionais e eficientes.
-
-## 🛠️ Tecnologias Utilizadas
-
-- TypeScript
-- React / Next.js
-- Node.js
-- Git / GitHub
-- Figma
-
-## 🌐 Acesse meu portfólio
+## 🌐 My portfolio
 
 🔗 [https://dev-luch.com](https://dev-luch.com)
 
-## 📫 Contato
+## 📫 Contact
 
 - **Email:** lucas.christian.programmer@gmail.com  
 - **LinkedIn:** [linkedin.com/in/lucas-christian](https://www.linkedin.com/in/lucas-christian-226846245/)  
-- **GitHub:** [github.com/Lucas-Christian](https://github.com/Lucas-Christian)
+- **GitHub:** [github.com/dev-luch](https://github.com/dev-luch)
 
 ---
 
-> Para mais detalhes sobre mim, experiências e projetos, acesse o site acima. Obrigado pela visita!
+> For more details about me, my experiences, and projects, please visit the website above. Thank you for visiting!
