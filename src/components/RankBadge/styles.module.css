@@ -1,4 +1,3 @@
-/* RankBadge Styles */
 .rankBadge {
   display: inline-flex;
   flex-direction: column;
@@ -52,7 +51,7 @@
   text-align: center;
 }
 
-/* Size Variants */
+
 .small {
   padding: 0.3rem;
   border-radius: 8px;

@@ -13,7 +13,6 @@ const defaultPreferences: AnimationPreferences = {
 export function AnimationProvider({ children }: { children: React.ReactNode }) {
   const [preferences, setPreferences] = useState<AnimationPreferences>(defaultPreferences);
 
-  // Carregar preferências do localStorage
   useEffect(() => {
     const saved = localStorage.getItem('animation-preferences');
     if (saved) {
@@ -26,7 +25,6 @@ export function AnimationProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  // Salvar preferências no localStorage
   useEffect(() => {
     localStorage.setItem('animation-preferences', JSON.stringify(preferences));
   }, [preferences]);

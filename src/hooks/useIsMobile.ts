@@ -8,13 +8,10 @@ export function useIsMobile() {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    // Verificar no carregamento
     checkIsMobile();
 
-    // Adicionar listener para mudanças de tamanho
     window.addEventListener('resize', checkIsMobile);
 
-    // Cleanup
     return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
 

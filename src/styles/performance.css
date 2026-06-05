@@ -1,24 +1,21 @@
-/* Otimizações de Performance CSS */
-
-/* Scroll suave nativo */
 html {
   scroll-behavior: smooth;
 }
 
-/* Otimizações para GPU */
+
 * {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
 }
 
-/* Containment para melhor performance */
+
 .section {
   contain: layout style paint;
   will-change: transform;
 }
 
-/* Otimizações para animações */
+
 @media (prefers-reduced-motion: no-preference) {
   .animate {
     animation-duration: 0.3s;
@@ -27,7 +24,7 @@ html {
   }
 }
 
-/* Reduzir animações em dispositivos com preferência por movimento reduzido */
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -36,22 +33,22 @@ html {
   }
 }
 
-/* Otimizações para mobile */
+
 @media (max-width: 768px) {
-  /* Reduzir efeitos em mobile */
+  
   .particles,
   .particle-system {
     filter: blur(0.5px);
     opacity: 0.8;
   }
   
-  /* Menos partículas em mobile */
+  
   .particle {
     transform: scale(0.8);
   }
 }
 
-/* Otimizações de renderização */
+
 .particle,
 .particle-system {
   contain: layout style paint;
@@ -59,25 +56,25 @@ html {
   will-change: transform;
 }
 
-/* Lazy loading de imagens nativo */
+
 img {
   loading: lazy;
   decoding: async;
 }
 
-/* Otimizações para scroll */
+
 .scroll-container {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Reduzir repaints */
+
 .static-content {
   contain: layout style paint;
 }
 
-/* Otimizações para canvas */
+
 canvas {
   image-rendering: optimizeSpeed;
   image-rendering: -moz-crisp-edges;

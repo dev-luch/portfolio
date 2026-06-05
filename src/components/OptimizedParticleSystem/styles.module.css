@@ -10,15 +10,15 @@
   transform: translateZ(0);
 }
 
-/* Otimizações para mobile */
+
 @media (max-width: 768px) {
   .particleSystem {
-    /* Reduzir qualidade em mobile para melhor performance */
+    
     filter: blur(0.5px);
   }
 }
 
-/* Reduzir animações em dispositivos com preferência por movimento reduzido */
+
 @media (prefers-reduced-motion: reduce) {
   .particleSystem {
     display: none;

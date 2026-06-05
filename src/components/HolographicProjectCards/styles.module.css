@@ -1,4 +1,3 @@
-/* Holographic Project Cards Styles */
 .holographicContainer {
   position: relative;
   min-height: 100vh;
@@ -11,7 +10,7 @@
   padding: 2rem;
 }
 
-/* Background Effects */
+
 .backgroundEffects {
   position: absolute;
   top: 0;
@@ -107,7 +106,7 @@
   100% { transform: translate(-200px, -200px); }
 }
 
-/* Header */
+
 .header {
   position: relative;
   z-index: 10;
@@ -150,7 +149,7 @@
   font-weight: 400;
 }
 
-/* Cards Grid */
+
 .cardsGrid {
   position: relative;
   z-index: 5;
@@ -162,7 +161,7 @@
   padding: 2rem 0;
 }
 
-/* Holographic Card */
+
 .holographicCard {
   position: relative;
   background: rgba(15, 15, 35, 0.3);
@@ -211,7 +210,7 @@
   }
 }
 
-/* Holographic Glow Effect */
+
 .holographicGlow {
   position: absolute;
   top: -50%;
@@ -235,7 +234,7 @@
   50% { opacity: 0.6; transform: scale(1.1); }
 }
 
-/* Card Content */
+
 .cardContent {
   position: relative;
   z-index: 10;
@@ -245,7 +244,7 @@
   flex-direction: column;
 }
 
-/* Project Header */
+
 .projectHeader {
   display: flex;
   align-items: center;
@@ -309,7 +308,7 @@
   50% { opacity: 0.5; }
 }
 
-/* Project Description */
+
 .projectDescription {
   margin-bottom: 1.5rem;
 }
@@ -320,7 +319,7 @@
   font-size: 0.95rem;
 }
 
-/* Project Previews */
+
 .projectPreviews {
   margin-bottom: 1.5rem;
 }
@@ -449,7 +448,7 @@
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
 }
 
-/* Technologies */
+
 .technologies {
   margin-bottom: 1.5rem;
 }
@@ -488,7 +487,7 @@
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-/* Project Links */
+
 .projectLinks {
   display: flex;
   gap: 1rem;
@@ -520,7 +519,7 @@
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
 }
 
-/* Holographic Scan Lines */
+
 .scanLines {
   position: absolute;
   top: 0;
@@ -548,7 +547,7 @@
   100% { background-position: 200% 0; }
 }
 
-/* Holographic Border */
+
 .holographicBorder {
   position: absolute;
   top: 0;
@@ -578,7 +577,7 @@
   50% { background-position: 100% 50%; }
 }
 
-/* Zoom Modal */
+
 .zoomModal {
   position: fixed;
   top: 0;
@@ -671,7 +670,7 @@
   transform: scale(1.02);
 }
 
-/* Light Theme for Zoom Modal */
+
 [data-theme="light"] .zoomModal {
   background: rgba(0, 0, 0, 0.9);
 }
@@ -694,7 +693,7 @@
   background: #27AEF4;
 }
 
-/* Light Theme */
+
 [data-theme="light"] .holographicContainer {
   background: linear-gradient(135deg, #1033AD 0%, #0A1E5E 50%, #000000 100%);
   color: #ffffff;
@@ -779,7 +778,7 @@
   border-color: #27AEF4;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .holographicContainer {
     padding: 1rem;

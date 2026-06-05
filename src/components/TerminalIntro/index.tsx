@@ -61,15 +61,15 @@ export const TerminalIntro = ({ onComplete }: TerminalIntroProps) => {
 
   return (
     <div className={`${styles.terminalIntro} ${animationClasses}`}>
-      {/* Fundo futurista */}
+      
       <div className={styles.background}>
         <div className={styles.gridOverlay}></div>
          <Particles count={8} />
       </div>
 
-      {/* Container principal */}
+      
       <div className={styles.container}>
-        {/* Terminal */}
+        
         <div className={styles.terminal}>
           <div className={styles.terminalHeader}>
             <div className={styles.terminalButtons}>
@@ -109,7 +109,7 @@ export const TerminalIntro = ({ onComplete }: TerminalIntroProps) => {
             </div>
           </div>
         </div>
-        {/* Botão de entrada */}
+        
         {!isTyping && (
           <div className={styles.enterButton}>
             <button onClick={onComplete} className={styles.enterBtn}>

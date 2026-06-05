@@ -1,4 +1,3 @@
-/* SkillModal Styles */
 .modalBackdrop {
   position: fixed;
   inset: 0;
@@ -268,7 +267,6 @@
   text-align: right;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .modalContent {
     width: 95%;

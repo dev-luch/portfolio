@@ -23,7 +23,6 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { animationClasses } = useAnimationClasses();
 
-  // Filtros e busca
   const getFilteredSkills = () => {
     let filtered = skillsData;
 
@@ -48,22 +47,17 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
     setSelectedSkill(null);
   };
 
-  // Removido - agora usando handleCategoryClick
-
   const getCategorySkills = (category: string) =>
     getFilteredSkills().filter(skill => skill.categories.includes(category));
 
-  // Verificar se precisa de scroll baseado na quantidade de skills
   const needsScroll = (category: string) => {
     const skills = getCategorySkills(category);
-    return skills.length > 8; // Aumentei para 8 skills para dar mais espaço
+    return skills.length > 8;
   };
 
-  // Estado para controlar quando mostrar scroll (após animação)
   const [showScroll, setShowScroll] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Função para ativar scroll após animação
   const handleCategoryClick = (categoryId: string) => {
     if (expandedCategory === categoryId) {
       setExpandedCategory(null);
@@ -71,10 +65,9 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
       setIsAnimating(false);
     } else {
       setExpandedCategory(categoryId);
-      setShowScroll(false); // Garantir que está desabilitado
-      setIsAnimating(true); // Marcar como animando
+      setShowScroll(false);
+      setIsAnimating(true);
 
-      // Ativar scroll após 1500ms (tempo completo da animação)
       setTimeout(() => {
         setIsAnimating(false);
         if (needsScroll(categoryId)) {
@@ -84,10 +77,9 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
     }
   };
 
-
   return (
     <div className={`${styles.skillsTree} ${className} ${animationClasses}`} ref={containerRef}>
-      {/* Background Effects */}
+      
       <div className={styles.backgroundEffects}>
         <div className={styles.gridPattern} />
         <div className={styles.gradientOrbs}>
@@ -97,10 +89,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
         </div>
       </div>
 
-      {/* Particle System */}
+      
       <OptimizedParticleSystem />
 
-      {/* Header */}
+      
       <div className={styles.header}>
         <h2 className={styles.title}>
           <span className={styles.titleGlow}><Network size={48} /> {t('skills.skills')}</span>
@@ -110,7 +102,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
         </p>
       </div>
 
-      {/* Controls */}
+      
       <div className={styles.controls}>
         <div className={styles.searchContainer}>
           <input
@@ -126,9 +118,9 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
         </div>
       </div>
 
-      {/* Roadmap Container */}
+      
       <div className={styles.roadmapContainer}>
-        {/* Categories Sidebar */}
+        
         <div className={styles.categoriesSidebar}>
           <h3 className={styles.sidebarTitle}>{t('skills.categories')}</h3>
           {skillCategories.map((category) => {
@@ -161,7 +153,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
           })}
         </div>
 
-        {/* Skills Content */}
+        
         <div
           className={`${styles.skillsContent} ${expandedCategory && needsScroll(expandedCategory) && showScroll && !isAnimating ? styles.withScroll : ''}`}
           style={{
@@ -229,8 +221,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
         </div>
       </div>
 
-
-      {/* Modal */}
+      
       {selectedSkill && (
         <SkillModal
           skill={getFilteredSkills().find(s => s.id === selectedSkill)!}

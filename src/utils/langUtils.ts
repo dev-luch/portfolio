@@ -11,5 +11,3 @@ export type Lang = keyof typeof dictionaries;
 const fallbackLang: Lang = 'en-US';
 
 export const getDictionary = (lang: string) => dictionaries[lang as Lang] || dictionaries[fallbackLang];
-
-

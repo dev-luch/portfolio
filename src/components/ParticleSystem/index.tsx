@@ -80,7 +80,6 @@ export const ParticleSystem: React.FC = () => {
         })
         .filter(particle => particle.life < particle.maxLife);
 
-      // Add new particles
       if (Math.random() < 0.1) {
         particlesRef.current.push(createParticle());
       }

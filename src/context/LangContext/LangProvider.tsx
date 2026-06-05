@@ -12,7 +12,6 @@ export function LangProvider({
   children: React.ReactNode;
 }) {
   const [lang, setLang] = useState<Lang>(() => {
-    // Tenta pegar do document primeiro, depois usa o language passado
     if (typeof document !== 'undefined') {
       const docLang = document.documentElement.lang as Lang;
       return docLang || language;
@@ -30,7 +29,6 @@ export function LangProvider({
     setLang(newLang);
   }
 
-  // Detecta mudanças no document.documentElement.lang
   useEffect(() => {
     if (typeof document !== 'undefined') {
       const observer = new MutationObserver(() => {

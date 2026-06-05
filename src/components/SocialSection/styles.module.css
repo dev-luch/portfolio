@@ -150,7 +150,6 @@
   filter: drop-shadow(0 0 10px var(--glowing-border));
 }
 
-
 .socialLabel {
   font-family: var(--font-orbitron);
   font-weight: bold;

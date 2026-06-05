@@ -61,7 +61,6 @@ export const useScrollRender = (options: UseScrollRenderOptions = {}): UseScroll
       setIsVisible(true);
       setShouldRender(true);
       
-      // Limpar timeout de desmontagem se existir
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
         timeoutRef.current = undefined;
@@ -69,11 +68,9 @@ export const useScrollRender = (options: UseScrollRenderOptions = {}): UseScroll
     } else {
       setIsVisible(false);
       
-      // Delay antes de desmontar para evitar flickering
       if (unmountDelay > 0) {
         timeoutRef.current = setTimeout(() => {
           setShouldRender(false);
-          // Reset da medição para permitir nova medição na próxima renderização
           setHasMeasured(false);
         }, unmountDelay);
       } else {
@@ -87,7 +84,6 @@ export const useScrollRender = (options: UseScrollRenderOptions = {}): UseScroll
     const element = ref.current;
     if (!element) return;
 
-    // Medir altura real quando renderizado pela primeira vez
     if (shouldRender && !hasMeasured && preserveHeight) {
       const measureHeight = () => {
         const rect = element.getBoundingClientRect();
@@ -97,13 +93,11 @@ export const useScrollRender = (options: UseScrollRenderOptions = {}): UseScroll
         }
       };
       
-      // Pequeno delay para garantir que o conteúdo foi renderizado
       const timeoutId = setTimeout(measureHeight, 100);
       
       return () => clearTimeout(timeoutId);
     }
 
-    // Criar observer
     observerRef.current = new IntersectionObserver(handleIntersection, {
       threshold,
       rootMargin

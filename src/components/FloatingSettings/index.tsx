@@ -26,7 +26,7 @@ export const FloatingSettings = () => {
 
   return (
     <div className={styles.floatingSettings}>
-      {/* Botão principal */}
+      
       <button 
         className={styles.settingsButton}
         onClick={() => setIsOpen(!isOpen)}
@@ -36,7 +36,7 @@ export const FloatingSettings = () => {
         <div className={styles.settingsGlow}></div>
       </button>
 
-      {/* Menu dropdown */}
+      
       {isOpen && (
         <div className={styles.settingsMenu}>
           <div className={styles.menuHeader}>
@@ -44,7 +44,7 @@ export const FloatingSettings = () => {
             <span>CONFIGURAÇÕES</span>
           </div>
 
-          {/* Seção de Idioma */}
+          
           <div className={styles.settingsSection}>
             <div className={styles.sectionTitle}>
               <Globe size={16} />
@@ -73,7 +73,7 @@ export const FloatingSettings = () => {
             </div>
           </div>
 
-          {/* Seção de Tema */}
+          
           <div className={styles.settingsSection}>
             <div className={styles.sectionTitle}>
               <Monitor size={16} />
@@ -109,7 +109,7 @@ export const FloatingSettings = () => {
             </div>
           </div>
 
-          {/* Seção de Animações */}
+          
           <div className={styles.settingsSection}>
             <div className={styles.sectionTitle}>
               <Zap size={16} />
@@ -139,7 +139,7 @@ export const FloatingSettings = () => {
         </div>
       )}
 
-      {/* Overlay para fechar */}
+      
       {isOpen && (
         <div 
           className={styles.overlay}

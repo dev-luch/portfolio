@@ -97,7 +97,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
 
   return (
     <div className={`${styles.holographicContainer} ${className} ${resolvedTheme === 'light' ? styles.lightTheme : ''}`} ref={containerRef}>
-      {/* Background Effects */}
+      
       <div className={styles.backgroundEffects}>
         <div className={styles.matrixRain} />
         <div className={styles.matrixCode} />
@@ -110,7 +110,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
         </div>
       </div>
 
-      {/* Header */}
+      
       <div className={styles.header}>
         <h2 className={styles.title}>
           <span className={styles.titleGlow}>
@@ -122,7 +122,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
         </p>
       </div>
 
-      {/* Holographic Cards Grid */}
+      
       <div className={styles.cardsGrid}>
         {projects.map((project, index) => (
           <div
@@ -137,12 +137,12 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
             onMouseEnter={() => setHoveredCard(project.id)}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            {/* Holographic Glow Effect */}
+            
             <div className={styles.holographicGlow} />
             
-            {/* Card Content */}
+            
             <div className={styles.cardContent}>
-              {/* Project Header */}
+              
               <div className={styles.projectHeader}>
                 <div className={styles.projectIcon}>
                   {getProjectIcon(project)}
@@ -159,12 +159,12 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                 </div>
               </div>
 
-              {/* Project Description */}
+              
               <div className={styles.projectDescription}>
                 <p>{t(project.description)}</p>
               </div>
 
-              {/* Project Previews */}
+              
               <div className={styles.projectPreviews}>
                 <div className={styles.previewControls}>
                   <button
@@ -228,7 +228,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                 </div>
               </div>
 
-              {/* Technologies */}
+              
               <div className={styles.technologies}>
                 <h4 className={styles.techTitle}>Technologies</h4>
                 <div className={styles.techList}>
@@ -245,7 +245,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                 </div>
               </div>
 
-              {/* Project Links */}
+              
               <div className={styles.projectLinks}>
                 {project.githubUrl && (
                   <a
@@ -271,17 +271,17 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                 )}
               </div>
 
-              {/* Holographic Scan Lines */}
+              
               <div className={styles.scanLines} />
             </div>
 
-            {/* Holographic Border */}
+            
             <div className={styles.holographicBorder} />
           </div>
         ))}
       </div>
 
-      {/* Skill Modal */}
+      
       {selectedSkill && (
         <SkillModal
           skill={skillsData.find(s => s.id === selectedSkill)!}
@@ -289,7 +289,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
         />
       )}
 
-      {/* Zoom Modal */}
+      
       {zoomModal.isOpen && (
         <div className={styles.zoomModal} onClick={closeZoomModal}>
           <div className={styles.zoomModalContent} onClick={(e) => e.stopPropagation()}>
@@ -299,6 +299,8 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
             <Image
               src={zoomModal.image}
               alt={zoomModal.alt}
+              width={1920}
+              height={1080}
               className={styles.zoomImage}
             />
           </div>

@@ -23,7 +23,6 @@ export const OptimizedParticleSystem: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Detectar mobile
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -35,9 +34,8 @@ export const OptimizedParticleSystem: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Pausar animações quando não visível (simplificado)
   useEffect(() => {
-    setIsPaused(false); // Sempre ativo, sem lazy loading
+    setIsPaused(false);
   }, []);
 
   useEffect(() => {
@@ -103,7 +101,6 @@ export const OptimizedParticleSystem: React.FC = () => {
         })
         .filter(particle => particle.life < particle.maxLife);
 
-      // Add new particles (menos em mobile)
       if (Math.random() < (isMobile ? 0.05 : 0.1)) {
         particlesRef.current.push(createParticle());
       }

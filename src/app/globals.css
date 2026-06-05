@@ -1,9 +1,7 @@
-/* Otimizações de Performance */
 html {
   scroll-behavior: smooth;
 }
 
-/* Reduzir animações em dispositivos com preferência por movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -12,7 +10,6 @@ html {
   }
 }
 
-/* Otimizações para mobile */
 @media (max-width: 768px) {
   .particles,
   .particle-system {
@@ -26,27 +23,27 @@ html {
 }
 
 :root {
-  /* Light theme — Azul futurista */
-  --background: #1033AD; /* azul profundo de base */
-  --background-2: #0A1E5E; /* camada adicional para gradiente */
+  
+  --background: #1033AD; 
+  --background-2: #0A1E5E; 
   --text: #ffffff;
-  --foreground: #EBF3FF; /* textos secundários */
+  --foreground: #EBF3FF; 
 
-  /* Acentos neon */
+  
   --border: #27AEF4;
   --active-border: #3CE5FC;
   --glowing-border: #00F0FF;
 
-  /* Superfícies */
+  
   --container-bg: rgba(10, 15, 26, 0.85);
   --item-bg: rgba(8, 28, 63, 0.7);
 
-  /* Utilitários de azul */
+  
   --picton-blue: #27AEF4;
   --electric-blue: #3CE5FC;
   --columbia-blue: #C6EAF9;
 
-  /* Tipografia (escala modular) */
+  
   --font-3xl: 2.488125rem;
   --font-2xl: 2.07375rem;
   --font-xl: 1.728125rem;
@@ -58,10 +55,9 @@ html {
   --font-2xs: 0.57875rem;
 }
 
-/* Dark theme — Hacker/Cinza */
 [data-theme="dark"] {
-  --background: #0B0F14; /* carvão */
-  --background-2: #0E121A; /* segunda camada */
+  --background: #0B0F14; 
+  --background-2: #0E121A; 
   --text: #E6ECF5;
   --foreground: #C9D2E3;
 
@@ -109,7 +105,6 @@ a {
   text-decoration: none;
 }
 
-/* === SCROLLBAR BLACK - SIMPLES E ELEGANTE === */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -135,13 +130,11 @@ a {
   background: transparent;
 }
 
-/* Firefox scrollbar */
 * {
   scrollbar-width: thin;
   scrollbar-color: #666 #444;
 }
 
-/* Scrollbar para todos os elementos com overflow */
 * {
   scrollbar-width: thin;
   scrollbar-color: #666 #444;
@@ -172,7 +165,6 @@ a {
   background: transparent;
 }
 
-/* Remover setinhas feias para todos os elementos - REGRAS MAIS ESPECÍFICAS */
 *::-webkit-scrollbar-button {
   display: none !important;
   width: 0 !important;
@@ -200,14 +192,10 @@ a {
   height: 0 !important;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* === CONTROLE DE ANIMAÇÕES === */
-
-/* === ANIMAÇÕES BASE (quando habilitadas) === */
 .particle {
   animation: float 6s ease-in-out infinite, particlePulse 3s ease-in-out infinite;
 }
@@ -232,7 +220,6 @@ html {
   animation: descriptionFloat 4s ease-in-out infinite;
 }
 
-/* === CONTROLE FLOATING & GLOW (unificado) - ALTA ESPECIFICIDADE === */
 .no-floating-and-glow-animations .mainTitle,
 .no-floating-and-glow-animations .missionBadge,
 .no-floating-and-glow-animations .imageContainer,
@@ -266,7 +253,6 @@ html {
   animation: none !important;
 }
 
-/* === SOBRESCREVER ANIMAÇÕES DOS MÓDULOS CSS === */
 .no-floating-and-glow-animations [class*="mainTitle"],
 .no-floating-and-glow-animations [class*="missionBadge"],
 .no-floating-and-glow-animations [class*="imageContainer"],
@@ -307,8 +293,6 @@ html {
   display: none !important;
 }
 
-
-/* === OCULTAR GRID NO MOBILE === */
 @media (max-width: 768px) {
   .gridBackground,
   .gridPattern,
@@ -317,7 +301,6 @@ html {
   }
 }
 
-/* === REDUCED MOTION === */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;

@@ -27,7 +27,6 @@ export const OptimizedParticles: React.FC<OptimizedParticlesProps> = ({
   const [isMobile, setIsMobile] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Detectar mobile
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -39,14 +38,12 @@ export const OptimizedParticles: React.FC<OptimizedParticlesProps> = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Pausar animações quando não visível (simplificado)
   useEffect(() => {
     if (pauseWhenHidden) {
-      setIsPaused(false); // Sempre ativo, sem lazy loading
+      setIsPaused(false);
     }
   }, [pauseWhenHidden]);
 
-  // Calcular número otimizado de partículas
   const optimizedCount = React.useMemo(() => {
     if (!mobileOptimized) return count;
     return isMobile ? Math.max(2, Math.floor(count / 4)) : Math.floor(count / 2);
