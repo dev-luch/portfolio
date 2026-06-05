@@ -76,6 +76,7 @@ export const enUS = {
     responsibilities: "Responsibilities",
     "view-github": "View on Github",
     "view-project": "View project",
+    "code-available": "Code Available",
     subtitle: "Explore my projects connected by shared technologies",
     g4mix: {
       description: "Music streaming platform with AI for discovering new artists and generating personalized playlists",
@@ -83,6 +84,7 @@ export const enUS = {
       role: "Full-Stack Developer & Architect"
     },
     "ofertas-dev-luch": {
+      title: "Dev Luch Offers",
       description: "Job offers aggregation platform for developers with advanced filters and notifications",
       responsibilities: "Frontend development, web scraping, API integration, notification system",
       role: "Full-Stack Developer"

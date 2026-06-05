@@ -76,6 +76,7 @@ export const ptBR = {
     responsibilities: "Responsabilidades",
     "view-github": "Ver no Github",
     "view-project": "Ver projeto",
+    "code-available": "Código Disponível",
     subtitle: "Explore meus projetos conectados por tecnologias compartilhadas",
     g4mix: {
       description: "Plataforma de streaming de música com IA para descoberta de novos artistas e geração de playlists personalizadas",
@@ -83,6 +84,7 @@ export const ptBR = {
       role: "Desenvolvedor Full-Stack & Arquiteto"
     },
     "ofertas-dev-luch": {
+      title: "Ofertas Dev Luch",
       description: "Plataforma de agregação de ofertas de emprego para desenvolvedores com filtros avançados e notificações",
       responsibilities: "Desenvolvimento frontend, web scraping, integração de APIs, sistema de notificações",
       role: "Desenvolvedor Full-Stack"

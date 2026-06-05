@@ -296,6 +296,15 @@
   animation: statusPulse 2s ease-in-out infinite;
 }
 
+.statusDotArchived {
+  background: #6b7280;
+  animation: none;
+}
+
+.projectStatusArchived {
+  color: #6b7280;
+}
+
 @keyframes statusPulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }

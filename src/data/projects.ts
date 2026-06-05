@@ -8,6 +8,8 @@ export interface Project {
   githubUrl?: string;
   websiteUrl?: string;
   projectType: "open-source" | "personal";
+  status?: "live" | "code-available";
+  titleKey?: string;
   role: string;
   desktopImage: string;
   desktopImageAlt: string;
@@ -25,6 +27,7 @@ export const projects: Project[] = [
     responsibilities: "projects.g4mix.responsibilities",
     githubUrl: "https://github.com/G4mix",
     projectType: "open-source",
+    status: "code-available",
     role: "projects.g4mix.role",
     desktopImage: "/g4mix-desktop-demo.png",
     desktopImageAlt: "Desktop G4mix",
@@ -38,6 +41,7 @@ export const projects: Project[] = [
     imageAlt: "Logo Ofertas Dev Luch",
     technologies: ["Next.js", "React", "TypeScript", "Node.js", "MongoDB", "Web Scraping", "API Integration"],
     responsibilities: "projects.ofertas-dev-luch.responsibilities",
+    titleKey: "projects.ofertas-dev-luch.title",
     websiteUrl: "https://ofertas.dev-luch.com",
     projectType: "personal",
     role: "projects.ofertas-dev-luch.role",

@@ -141,14 +141,14 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                   {getProjectIcon(project)}
                 </div>
                 <div className={styles.projectInfo}>
-                  <h3 className={styles.projectTitle}>{project.title}</h3>
+                  <h3 className={styles.projectTitle}>{project.titleKey ? t(project.titleKey) : project.title}</h3>
                   <div className={styles.projectType}>
                     {project.projectType === 'open-source' ? 'Open Source' : 'Personal'}
                   </div>
                 </div>
-                <div className={styles.projectStatus}>
-                  <div className={styles.statusDot} />
-                  <span>Live</span>
+                <div className={`${styles.projectStatus} ${project.status === 'code-available' ? styles.projectStatusArchived : ''}`}>
+                  <div className={`${styles.statusDot} ${project.status === 'code-available' ? styles.statusDotArchived : ''}`} />
+                  <span>{project.status === 'code-available' ? t('projects.code-available') : 'Live'}</span>
                 </div>
               </div>
 
