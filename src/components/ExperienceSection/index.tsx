@@ -2,8 +2,7 @@ import { Briefcase } from "lucide-react";
 import { useLang } from "../../hooks/useLang";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import { useAnimationClasses } from "../../hooks/useAnimationClasses";
-import * as Tooltip from "@radix-ui/react-tooltip";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import { experiences } from "../../data/experiences";
 
@@ -11,94 +10,78 @@ export const ExperienceSection = () => {
   const { t } = useLang();
   const { ref: experienceRef, isVisible: experienceVisible } = useScrollReveal({ threshold: 0.2 });
   const { animationClasses } = useAnimationClasses();
-  const [isMobile, setIsMobile] = useState(false);
-  const [openTooltip, setOpenTooltip] = useState<number | null>(null);
+  const [openPopover, setOpenPopover] = useState<number | null>(null);
+  const popoverRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Fechar tooltip ao clicar fora no mobile
-  useEffect(() => {
-    if (!isMobile) return;
-
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      const timelineItem = target.closest(`.${styles.timelineItem}`);
+      const clickedPopover = Object.values(popoverRefs.current).some(
+        (ref) => ref && ref.contains(target)
+      );
+      const clickedTrigger = target.closest(`.${styles.timelineItem}`);
       
-      if (!timelineItem) {
-        setOpenTooltip(null);
+      if (!clickedPopover && !clickedTrigger) {
+        setOpenPopover(null);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isMobile]);
+    if (openPopover !== null) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [openPopover]);
 
   return (
-    <Tooltip.Provider 
-      delayDuration={0} 
-      skipDelayDuration={0}
-      disableHoverableContent={false}
-    >
-      <section className={`${styles.experienceSection} ${animationClasses}`} ref={experienceRef as any}>
-        <div className={`${styles.sectionHeader} ${experienceVisible ? styles.reveal : ''}`}>
-          <Briefcase size={48} className={styles.headerIcon} />
-          <h2 className={styles.sectionTitle}>{t("experience.title")}</h2>
-        </div>
+    <section className={`${styles.experienceSection} ${animationClasses}`} ref={experienceRef as any}>
+      <div className={`${styles.sectionHeader} ${experienceVisible ? styles.reveal : ''}`}>
+        <Briefcase size={48} className={styles.headerIcon} />
+        <h2 className={styles.sectionTitle}>{t("experience.title")}</h2>
+      </div>
 
-        <div className={`${styles.timeline} ${experienceVisible ? styles.reveal : ''}`}>
-          <div className={styles.timelineLine}></div>
-          
-          {experiences.map((experience) => {
-            const IconComponent = experience.icon;
-            return (
-              <Tooltip.Root 
-                key={experience.id} 
-                delayDuration={0}
-                open={isMobile ? openTooltip === experience.id : undefined}
-                onOpenChange={isMobile ? (open) => setOpenTooltip(open ? experience.id : null) : undefined}
+      <div className={`${styles.timeline} ${experienceVisible ? styles.reveal : ''}`}>
+        <div className={styles.timelineLine}></div>
+        
+        {experiences.map((experience) => {
+          const IconComponent = experience.icon;
+          const isOpen = openPopover === experience.id;
+          return (
+            <div
+              key={experience.id}
+              className={`${styles.timelineItemWrapper} ${isOpen ? styles.timelineItemWrapperOpen : ""}`}
+            >
+              <button 
+                type="button"
+                className={`${styles.timelineItem} ${styles[experience.status]}`}
+                aria-label={t(experience.title)}
+                onClick={() => setOpenPopover(isOpen ? null : experience.id)}
               >
-                <Tooltip.Trigger asChild>
-                  <div 
-                    className={`${styles.timelineItem} ${styles[experience.status]}`}
-                    onClick={isMobile ? () => setOpenTooltip(openTooltip === experience.id ? null : experience.id) : undefined}
-                  >
-                    <div className={styles.timelineMarker}>
-                      <IconComponent size={16} className={styles.markerIcon} />
-                    </div>
+                <div className={styles.timelineMarker}>
+                  <IconComponent size={16} className={styles.markerIcon} />
+                </div>
+              </button>
+              {isOpen && (
+                <div 
+                  ref={(el) => {
+                    popoverRefs.current[experience.id] = el;
+                  }}
+                  className={styles.popoverContent}
+                >
+                  <div className={styles.popoverHeader}>
+                    <h3 className={styles.popoverTitle}>{t(experience.title)}</h3>
+                    <span className={styles.popoverDate}>{t(experience.date || "")}</span>
                   </div>
-                </Tooltip.Trigger>
-                <Tooltip.Portal>
-                  <Tooltip.Content 
-                    className={styles.tooltip} 
-                    side="bottom" 
-                    align="center" 
-                    sideOffset={10}
-                    avoidCollisions={true}
-                    collisionPadding={20}
-                    sticky="always"
-                    hideWhenDetached={false}
-                  >
-                    <div className={styles.tooltipContent}>
-                      <h3 className={styles.tooltipTitle}>{t(experience.title)}</h3>
-                      <span className={styles.tooltipPeriod}>{t(experience.date || "")}</span>
-                      <p className={styles.tooltipDescription}>{t(experience.responsibilities)}</p>
-                    </div>
-                    <Tooltip.Arrow className={styles.tooltipArrow} />
-                  </Tooltip.Content>
-                </Tooltip.Portal>
-              </Tooltip.Root>
-            );
-          })}
-        </div>
-      </section>
-    </Tooltip.Provider>
+                  <div className={styles.popoverBody}>
+                    <p className={styles.popoverDescription}>{t(experience.description)}</p>
+                    <p className={styles.popoverResponsibilities}>{t(experience.responsibilities)}</p>
+                  </div>
+                  <div className={styles.popoverArrow}></div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 };

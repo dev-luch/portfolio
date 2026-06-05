@@ -7,7 +7,8 @@
     radial-gradient(800px 400px at 50% 0%, rgba(0, 240, 255, 0.06), transparent 70%),
     linear-gradient(180deg, transparent 0%, rgba(0, 240, 255, 0.03) 50%, transparent 100%);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,6 +80,26 @@
   z-index: 1;
 }
 
+.timelineItemWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.timelineItemWrapperOpen {
+  z-index: 20000;
+}
+
+.timelineItemWrapperOpen .timelineMarker {
+  z-index: 20001;
+}
+
+.timelineItemWrapperOpen .markerIcon {
+  z-index: 20002;
+}
+
 .timelineItem {
   position: relative;
   display: flex;
@@ -86,6 +107,11 @@
   align-items: center;
   cursor: pointer;
   z-index: 1!important;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
 }
 
 .timelineMarker {
@@ -119,8 +145,12 @@
   z-index: 10000;
 }
 
-/* === TOOLTIP === */
-.tooltip {
+/* === POPOVER === */
+.popoverContent {
+  position: absolute;
+  bottom: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(15, 23, 42, 1);
   border: 1px solid var(--glowing-border);
   border-radius: 12px;
@@ -128,14 +158,52 @@
   box-shadow:
     0 8px 25px rgba(0, 240, 255, 0.3),
     0 0 40px rgba(0, 240, 255, 0.2);
-  z-index: 1000;
-  max-width: 300px;
-  animation: tooltipFadeIn 0.2s ease-out;
+  z-index: 20000;
+  max-width: 350px;
+  min-width: 280px;
+  animation: popoverFadeIn 0.2s ease-out;
   will-change: transform;
-  transform-origin: center;
+  transform-origin: center bottom;
+  outline: none;
+  pointer-events: auto;
 }
 
-.tooltipTitle {
+.popoverContent::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--glowing-border);
+}
+
+.popoverContent::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid rgba(15, 23, 42, 1);
+}
+
+.popoverHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.popoverTitle {
   font-family: var(--font-orbitron);
   font-size: 1.1rem;
   font-weight: bold;
@@ -145,26 +213,40 @@
   text-align: center;
 }
 
-.tooltipPeriod {
+.popoverDate {
   display: block;
   font-size: 0.9rem;
   text-align: center;
   color: var(--foreground);
-  margin-bottom: 0.75rem;
   font-weight: 500;
-  text-align: center;
 }
 
-.tooltipDescription {
+.popoverBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.popoverDescription {
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.6;
   font-size: 0.9rem;
   margin: 0;
   text-align: justify;
 }
 
-.tooltipArrow {
-  fill: var(--glowing-border);
+.popoverResponsibilities {
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: justify;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.popoverArrow {
+  display: none;
 }
 
 /* === STATUS STYLES === */
@@ -267,7 +349,7 @@
   }
 }
 
-@keyframes tooltipFadeIn {
+@keyframes popoverFadeIn {
   0% {
     opacity: 0;
     transform: translateY(5px) scale(0.98);
@@ -350,11 +432,37 @@
     flex-shrink: 0;
   }
   
-  .tooltip {
-    max-width: 280px;
+  .popoverContent {
+    bottom: auto;
+    top: calc(100% + 15px);
+    max-width: calc(100vw - 2rem);
+    min-width: 250px;
+    padding: 1.25rem;
+    transform: translateX(-50%);
   }
   
-  /* Estilos do tooltip movidos para o seletor principal */
+  .popoverContent::before {
+    bottom: auto;
+    top: -8px;
+    border-top: none;
+    border-bottom: 8px solid var(--glowing-border);
+  }
+  
+  .popoverContent::after {
+    bottom: auto;
+    top: -7px;
+    border-top: none;
+    border-bottom: 7px solid rgba(15, 23, 42, 1);
+  }
+  
+  .popoverHeader {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  .popoverBody {
+    gap: 0.75rem;
+  }
   
   /* Status styles para mobile */
   .timelineItem.completed .timelineMarker {
@@ -410,12 +518,13 @@
     height: 45px;
   }
   
-  .tooltipTitle {
-    font-size: 1.1rem;
+  .popoverTitle {
+    font-size: 1rem;
   }
   
-  .tooltipDescription {
-    font-size: 0.9rem;
+  .popoverDescription,
+  .popoverResponsibilities {
+    font-size: 0.85rem;
   }
 }
 
@@ -426,7 +535,7 @@
   .markerIcon,
   .timelineItem.current .timelineMarker,
   .timelineItem.current .markerIcon,
-  .tooltipContent {
+  .popoverContent {
     animation: none;
   }
   
