@@ -19,7 +19,6 @@ export const ptBR = {
     age: "Idade",
     profession: "Profissão",
     education: "Formação",
-    ageValue: "20 anos",
     professionValue: "Desenvolvedor de Software",
     educationValue: "Fatec Cotia",
     commits: "Commits",
@@ -131,15 +130,6 @@ export const ptBR = {
       "cypress": "Framework de testes end-to-end",
       "eslint": "Ferramenta de análise de código JavaScript",
       "prettier": "Formatador de código para consistência"
-    },
-    "experience": {
-      "3+ years": "3+ anos",
-      "1+ years": "1+ anos",
-      "4+ years": "4+ anos",
-      "2+ years": "2+ anos",
-      "6+ months": "6+ meses",
-      "3+ months": "3+ meses",
-      "2+ months": "2+ meses"
     },
     "projects": {
       "all-projects": "Todos os projetos",

@@ -2,7 +2,7 @@ import { Briefcase } from "lucide-react";
 import { useLang } from "../../hooks/useLang";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import { useAnimationClasses } from "../../hooks/useAnimationClasses";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import { experiences } from "../../data/experiences";
 
@@ -12,6 +12,31 @@ export const ExperienceSection = () => {
   const { animationClasses } = useAnimationClasses();
   const [openPopover, setOpenPopover] = useState<number | null>(null);
   const popoverRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
+
+  useLayoutEffect(() => {
+    if (openPopover === null) return;
+
+    const el = popoverRefs.current[openPopover];
+    if (!el) return;
+
+    el.style.setProperty('--offset-x', '0px');
+    el.style.setProperty('--arrow-offset', '0px');
+
+    const rect = el.getBoundingClientRect();
+    const pad = 12;
+    let offsetX = 0;
+
+    if (rect.left < pad) {
+      offsetX = pad - rect.left;
+    } else if (rect.right > window.innerWidth - pad) {
+      offsetX = window.innerWidth - pad - rect.right;
+    }
+
+    if (offsetX !== 0) {
+      el.style.setProperty('--offset-x', `${offsetX}px`);
+      el.style.setProperty('--arrow-offset', `${offsetX}px`);
+    }
+  }, [openPopover]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

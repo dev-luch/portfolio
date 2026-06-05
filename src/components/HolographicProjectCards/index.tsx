@@ -10,7 +10,7 @@ import {
   Monitor, 
   Smartphone, 
   Globe, 
-  Github, 
+  GitFork,
   ExternalLink, 
   Zap, 
   Code, 
@@ -68,7 +68,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
   };
 
   const getProjectIcon = (project: Project) => {
-    if (project.projectType === 'open-source') return <Github size={20} />;
+    if (project.projectType === 'open-source') return <GitFork size={20} />;
     return <Globe size={20} />;
   };
 
@@ -254,7 +254,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                     rel="noopener noreferrer"
                     className={styles.projectLink}
                   >
-                    <Github size={16} />
+                    <GitFork size={16} />
                     <span>GitHub</span>
                   </a>
                 )}

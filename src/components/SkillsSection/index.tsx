@@ -6,6 +6,7 @@ import { SkillModal } from '../SkillModal';
 import { OptimizedParticleSystem } from '../OptimizedParticleSystem';
 import { useAnimationClasses } from '../../hooks/useAnimationClasses';
 import { useLang } from '../../hooks/useLang';
+import { getSkillDuration } from '@utils/dynamicDuration';
 import { Search, Zap, Palette, Settings, Cloud, Smartphone, Wrench, Network, GitFork } from 'lucide-react';
 import styles from './styles.module.css';
 import Image from 'next/image';
@@ -15,7 +16,7 @@ interface SkillsSectionProps {
 }
 
 export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -191,9 +192,11 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
                   >
                      <div className={styles.skillIcon}>
                        {skill.icon ? (
-                         <Image 
-                           src={skill.icon} 
+                         <Image
+                           src={skill.icon}
                            alt={skill.name}
+                           width={32}
+                           height={32}
                            className={styles.skillIconImage}
                          />
                        ) : (
@@ -204,7 +207,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
                       <div className={styles.skillName}>{skill.name}</div>
                       <div className={styles.skillDetails}>
                         <div className={styles.skillRank}>{skill.rank}</div>
-                        <div className={styles.skillExperience}>{t(skill.experienceKey)}</div>
+                        <div className={styles.skillExperience}>{getSkillDuration(skill.startDate, lang)}</div>
                         <div className={styles.skillPercentage}>{skill.percentage}%</div>
                       </div>
                     </div>

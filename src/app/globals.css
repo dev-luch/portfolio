@@ -85,6 +85,7 @@ html {
 html,
 body {
   max-width: 100dvw;
+  overflow-x: hidden;
 }
 
 body {

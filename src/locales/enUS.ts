@@ -19,7 +19,6 @@ export const enUS = {
     age: "Age",
     profession: "Profession",
     education: "Education",
-    ageValue: "20 years old",
     professionValue: "Software Developer",
     educationValue: "Fatec Cotia",
     commits: "Commits",
@@ -131,15 +130,6 @@ export const enUS = {
       "cypress": "End-to-end testing framework",
       "eslint": "JavaScript code analysis tool",
       "prettier": "Code formatter for consistency"
-    },
-    "experience": {
-      "3+ years": "3+ years",
-      "1+ years": "1+ years",
-      "4+ years": "4+ years",
-      "2+ years": "2+ years",
-      "6+ months": "6+ months",
-      "3+ months": "3+ months",
-      "2+ months": "2+ months"
     },
     "projects": {
       "all-projects": "All projects",

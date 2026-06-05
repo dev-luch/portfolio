@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Skill, rankConfig, skillsData } from '@data/skills';
 import { RankBadge } from '../RankBadge';
 import { useLang } from '../../hooks/useLang';
+import { getSkillDuration } from '@utils/dynamicDuration';
 import styles from './styles.module.css';
 import Image from 'next/image';
 
@@ -14,7 +15,7 @@ interface SkillModalProps {
 }
 
 export const SkillModal: React.FC<SkillModalProps> = ({ skill, onClose, onRelatedSkillClick }) => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -64,6 +65,8 @@ export const SkillModal: React.FC<SkillModalProps> = ({ skill, onClose, onRelate
               <Image
                 src={skill.icon}
                 alt={skill.name}
+                width={48}
+                height={48}
                 className={styles.skillIconImage}
               />
             ) : (
@@ -91,7 +94,7 @@ export const SkillModal: React.FC<SkillModalProps> = ({ skill, onClose, onRelate
 
           <div className={styles.skillExperience}>
             <h3>{t('skills.modal.experience')}</h3>
-            <p>{t(skill.experienceKey)}</p>
+            <p>{getSkillDuration(skill.startDate, lang)}</p>
           </div>
 
           {skill.projects && skill.projects.length > 0 && (

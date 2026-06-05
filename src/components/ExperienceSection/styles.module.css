@@ -150,7 +150,9 @@
   position: absolute;
   bottom: calc(100% + 15px);
   left: 50%;
-  transform: translateX(-50%);
+  --offset-x: 0px;
+  --arrow-offset: 0px;
+  transform: translateX(calc(-50% + var(--offset-x)));
   background: rgba(15, 23, 42, 1);
   border: 1px solid var(--glowing-border);
   border-radius: 12px;
@@ -172,7 +174,7 @@
   content: '';
   position: absolute;
   bottom: -8px;
-  left: 50%;
+  left: calc(50% - var(--arrow-offset));
   transform: translateX(-50%);
   width: 0;
   height: 0;
@@ -185,7 +187,7 @@
   content: '';
   position: absolute;
   bottom: -7px;
-  left: 50%;
+  left: calc(50% - var(--arrow-offset));
   transform: translateX(-50%);
   width: 0;
   height: 0;
@@ -352,11 +354,11 @@
 @keyframes popoverFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(5px) scale(0.98);
+    transform: translateX(calc(-50% + var(--offset-x))) translateY(5px) scale(0.98);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateX(calc(-50% + var(--offset-x))) translateY(0) scale(1);
   }
 }
 
@@ -438,16 +440,17 @@
     max-width: calc(100vw - 2rem);
     min-width: 250px;
     padding: 1.25rem;
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% + var(--offset-x)));
+    transform-origin: center top;
   }
-  
+
   .popoverContent::before {
     bottom: auto;
     top: -8px;
     border-top: none;
     border-bottom: 8px solid var(--glowing-border);
   }
-  
+
   .popoverContent::after {
     bottom: auto;
     top: -7px;

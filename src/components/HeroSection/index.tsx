@@ -5,6 +5,7 @@ import { Container } from "../Container";
 import { Text } from "../Text";
 import Image from "next/image";
 import { useLang } from "../../hooks/useLang";
+import { calculateAge } from "@utils/dynamicDuration";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import { useAnimationClasses } from "../../hooks/useAnimationClasses";
 import { FloatingSettings } from "../FloatingSettings";
@@ -12,7 +13,7 @@ import { OptimizedParticles } from "../OptimizedParticles";
 import styles from "./styles.module.css";
 
 export const HeroSection = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const { totalStars, totalCommits, totalPRs, totalContributions, rank, isLoading, error } = {
     totalStars: 12,
     totalCommits: 1008,
@@ -98,7 +99,7 @@ export const HeroSection = () => {
                 <div className={styles.cardContent}>
                   <div className={styles.statItem}>
                     <span className={styles.statLabel}>{t("home.age")}:</span>
-                    <span className={styles.statValue}>{t("home.ageValue")}</span>
+                    <span className={styles.statValue}>{calculateAge(lang)}</span>
                   </div>
                   <div className={styles.statItem}>
                     <span className={styles.statLabel}>{t("home.profession")}:</span>
