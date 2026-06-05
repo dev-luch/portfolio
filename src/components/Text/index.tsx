@@ -17,7 +17,7 @@ export const Text = ({ children, asChild=false, family="inter", size="default", 
   const Component = asChild ? Slot : "p";
 
   return (
-    <Component 
+    <Component
       {...props}
       className={`${styles.text} ${className}`}
       style={style}

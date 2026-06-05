@@ -6,7 +6,7 @@
   width: 100%;
   position: relative;
   padding: 2.5rem 1.5rem;
-  background: 
+  background:
     radial-gradient(800px 400px at 50% 0%, rgba(0, 240, 255, 0.08), transparent 60%),
     linear-gradient(135deg, rgba(0, 240, 255, 0.02) 0%, transparent 50%, rgba(60, 229, 252, 0.03) 100%);
   overflow: hidden;
@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     linear-gradient(45deg, transparent 30%, rgba(0, 240, 255, 0.02) 50%, transparent 70%);
   animation: socialBackgroundShift 8s ease-in-out infinite;
   z-index: 1;
@@ -32,10 +32,10 @@
   left: -1px;
   right: -1px;
   bottom: -1px;
-  background: linear-gradient(45deg, 
-    rgba(0, 240, 255, 0.2), 
-    rgba(60, 229, 252, 0.1), 
-    rgba(39, 174, 244, 0.15), 
+  background: linear-gradient(45deg,
+    rgba(0, 240, 255, 0.2),
+    rgba(60, 229, 252, 0.1),
+    rgba(39, 174, 244, 0.15),
     rgba(0, 240, 255, 0.1));
   z-index: -1;
   animation: socialBorderPulse 6s ease-in-out infinite;
@@ -83,7 +83,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1.75rem 1.25rem;
-  background: 
+  background:
     linear-gradient(135deg, var(--container-bg) 0%, rgba(0, 240, 255, 0.05) 100%);
   border: 1px solid rgba(0, 240, 255, 0.3);
   border-radius: 15px;
@@ -125,11 +125,11 @@
 
 .socialLink:hover {
   border-color: var(--glowing-border);
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(0, 240, 255, 0.3),
     0 0 40px rgba(0, 240, 255, 0.2);
   transform: translateY(-8px) scale(1.02);
-  background: 
+  background:
     linear-gradient(135deg, var(--container-bg) 0%, rgba(0, 240, 255, 0.08) 100%);
 }
 
@@ -209,24 +209,24 @@
     text-shadow: 0 0 20px rgba(0, 240, 255, 0.6), 0 0 30px rgba(0, 240, 255, 0.3);
   }
 }
-@media (max-width: 768px) {  
+@media (max-width: 768px) {
   .socialLinks {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   @media (max-width: 480px) {
     .socialLinks {
       grid-template-columns: 1fr;
       gap: 0.75rem;
     }
   }
-  
+
   .socialLinks {
     gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .socialLink {
     padding: 1rem;
   }
@@ -260,19 +260,19 @@
   .socialTitle {
     animation: none;
   }
-  
+
   .socialSection::before {
     opacity: 0.3;
   }
-  
+
   .socialSection::after {
     opacity: 0.4;
   }
-  
+
   .socialTitle {
     text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
   }
-  
+
   .socialTitle:not(.reveal),
   .socialLinks:not(.reveal) {
     opacity: 1;

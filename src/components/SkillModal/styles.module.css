@@ -272,40 +272,40 @@
     width: 95%;
     max-height: 90vh;
   }
-  
+
   .modalHeader {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
-  
+
   .skillName {
     font-size: 1.5rem;
   }
-  
+
   .skillIcon {
     font-size: 2.5rem;
   }
-  
+
   .skillIconImage {
     width: 2.5rem;
     height: 2.5rem;
   }
-  
+
   .skillMeta {
     justify-content: center;
   }
-  
+
   .modalBody {
     padding: 1.5rem;
     gap: 1.5rem;
   }
-  
+
   .skillLevel {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .levelLabel {
     min-width: auto;
     text-align: center;
@@ -316,7 +316,7 @@
   .skillIcon {
     font-size: 2rem;
   }
-  
+
   .skillIconImage {
     width: 2rem;
     height: 2rem;

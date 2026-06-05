@@ -11,7 +11,6 @@
   border-radius: 2px;
 }
 
-
 @keyframes scanlineMove {
   0% {
     left: -100%;
@@ -33,7 +32,6 @@
   }
 }
 
-
 .scanline.blue {
   background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.8), transparent);
 }
@@ -50,7 +48,6 @@
   background: linear-gradient(90deg, transparent, rgba(255, 69, 0, 0.8), transparent);
 }
 
-
 .scanline.fast {
   animation-duration: 1.5s;
 }
@@ -63,7 +60,6 @@
   animation-duration: 8s;
 }
 
-
 .scanline.reverse {
   animation-direction: reverse;
 }
@@ -71,7 +67,6 @@
 .scanline.alternate {
   animation-direction: alternate;
 }
-
 
 .scanline.glow {
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
@@ -87,7 +82,6 @@
   height: 1px;
 }
 
-
 @media (max-width: 768px) {
   .scanline {
     animation-duration: 2s;
@@ -99,7 +93,6 @@
     animation-duration: 1.5s;
   }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   .scanline {

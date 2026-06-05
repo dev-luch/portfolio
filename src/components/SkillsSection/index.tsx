@@ -79,7 +79,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
 
   return (
     <div className={`${styles.skillsTree} ${className} ${animationClasses}`} ref={containerRef}>
-      
+
       <div className={styles.backgroundEffects}>
         <div className={styles.gridPattern} />
         <div className={styles.gradientOrbs}>
@@ -89,10 +89,8 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
         </div>
       </div>
 
-      
       <OptimizedParticleSystem />
 
-      
       <div className={styles.header}>
         <h2 className={styles.title}>
           <span className={styles.titleGlow}><Network size={48} /> {t('skills.skills')}</span>
@@ -102,7 +100,6 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
         </p>
       </div>
 
-      
       <div className={styles.controls}>
         <div className={styles.searchContainer}>
           <input
@@ -118,9 +115,8 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
         </div>
       </div>
 
-      
       <div className={styles.roadmapContainer}>
-        
+
         <div className={styles.categoriesSidebar}>
           <h3 className={styles.sidebarTitle}>{t('skills.categories')}</h3>
           {skillCategories.map((category) => {
@@ -153,7 +149,6 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
           })}
         </div>
 
-        
         <div
           className={`${styles.skillsContent} ${expandedCategory && needsScroll(expandedCategory) && showScroll && !isAnimating ? styles.withScroll : ''}`}
           style={{
@@ -221,7 +216,6 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
         </div>
       </div>
 
-      
       {selectedSkill && (
         <SkillModal
           skill={getFilteredSkills().find(s => s.id === selectedSkill)!}

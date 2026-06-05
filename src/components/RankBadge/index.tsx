@@ -10,13 +10,13 @@ interface RankBadgeProps {
   showLabel?: boolean;
 }
 
-export const RankBadge: React.FC<RankBadgeProps> = ({ 
-  rank, 
-  size = 'medium', 
-  showLabel = true 
+export const RankBadge: React.FC<RankBadgeProps> = ({
+  rank,
+  size = 'medium',
+  showLabel = true
 }) => {
   const rankInfo = rankConfig[rank];
-  
+
   const getSizeClass = () => {
     switch (size) {
       case 'small': return styles.small;
@@ -26,7 +26,7 @@ export const RankBadge: React.FC<RankBadgeProps> = ({
   };
 
   return (
-    <div 
+    <div
       className={`${styles.rankBadge} ${getSizeClass()}`}
       style={{
         '--rank-color': rankInfo.color,

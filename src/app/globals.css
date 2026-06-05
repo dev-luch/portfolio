@@ -16,34 +16,30 @@ html {
     filter: blur(0.5px);
     opacity: 0.8;
   }
-  
+
   .particle {
     transform: scale(0.8);
   }
 }
 
 :root {
-  
-  --background: #1033AD; 
-  --background-2: #0A1E5E; 
-  --text: #ffffff;
-  --foreground: #EBF3FF; 
 
-  
+  --background: #1033AD;
+  --background-2: #0A1E5E;
+  --text: #ffffff;
+  --foreground: #EBF3FF;
+
   --border: #27AEF4;
   --active-border: #3CE5FC;
   --glowing-border: #00F0FF;
 
-  
   --container-bg: rgba(10, 15, 26, 0.85);
   --item-bg: rgba(8, 28, 63, 0.7);
 
-  
   --picton-blue: #27AEF4;
   --electric-blue: #3CE5FC;
   --columbia-blue: #C6EAF9;
 
-  
   --font-3xl: 2.488125rem;
   --font-2xl: 2.07375rem;
   --font-xl: 1.728125rem;
@@ -56,8 +52,8 @@ html {
 }
 
 [data-theme="dark"] {
-  --background: #0B0F14; 
-  --background-2: #0E121A; 
+  --background: #0B0F14;
+  --background-2: #0E121A;
   --text: #E6ECF5;
   --foreground: #C9D2E3;
 

@@ -6,15 +6,15 @@ import { skillsData } from '@data/skills';
 import { SkillModal } from '../SkillModal';
 import { useLang } from '../../hooks/useLang';
 import { useTheme } from '../../hooks/useTheme';
-import { 
-  Monitor, 
-  Smartphone, 
-  Globe, 
+import {
+  Monitor,
+  Smartphone,
+  Globe,
   GitFork,
-  ExternalLink, 
-  Zap, 
-  Code, 
-  Database, 
+  ExternalLink,
+  Zap,
+  Code,
+  Database,
   Cloud,
   Star,
   ZoomIn,
@@ -47,12 +47,12 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
   }, []);
 
   const handleTechnologyClick = (technology: string) => {
-    const skill = skillsData.find(s => 
+    const skill = skillsData.find(s =>
       s.name.toLowerCase() === technology.toLowerCase() ||
       s.name.toLowerCase().includes(technology.toLowerCase()) ||
       technology.toLowerCase().includes(s.name.toLowerCase())
     );
-    
+
     if (skill) {
       setSelectedSkill(skill.id);
     }
@@ -93,7 +93,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
 
   return (
     <div className={`${styles.holographicContainer} ${className} ${resolvedTheme === 'light' ? styles.lightTheme : ''}`} ref={containerRef}>
-      
+
       <div className={styles.backgroundEffects}>
         <div className={styles.matrixRain} />
         <div className={styles.matrixCode} />
@@ -106,7 +106,6 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
         </div>
       </div>
 
-      
       <div className={styles.header}>
         <h2 className={styles.title}>
           <span className={styles.titleGlow}>
@@ -118,7 +117,6 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
         </p>
       </div>
 
-      
       <div className={styles.cardsGrid}>
         {projects.map((project, index) => (
           <div
@@ -133,12 +131,11 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
             onMouseEnter={() => setHoveredCard(project.id)}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            
+
             <div className={styles.holographicGlow} />
-            
-            
+
             <div className={styles.cardContent}>
-              
+
               <div className={styles.projectHeader}>
                 <div className={styles.projectIcon}>
                   {getProjectIcon(project)}
@@ -155,12 +152,10 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                 </div>
               </div>
 
-              
               <div className={styles.projectDescription}>
                 <p>{t(project.description)}</p>
               </div>
 
-              
               <div className={styles.projectPreviews}>
                 <div className={styles.previewControls}>
                   <button
@@ -185,7 +180,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
 
                 <div className={styles.previewContainer}>
                   {activePreview[project.id] === 'mobile' ? (
-                    <div 
+                    <div
                       className={styles.mobilePreview}
                       onClick={() => openZoomModal(project.mobileImage, project.mobileImageAlt)}
                     >
@@ -203,7 +198,7 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                       </div>
                     </div>
                   ) : (
-                    <div 
+                    <div
                       className={styles.desktopPreview}
                       onClick={() => openZoomModal(project.desktopImage, project.desktopImageAlt)}
                     >
@@ -224,7 +219,6 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                 </div>
               </div>
 
-              
               <div className={styles.technologies}>
                 <h4 className={styles.techTitle}>Technologies</h4>
                 <div className={styles.techList}>
@@ -241,7 +235,6 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                 </div>
               </div>
 
-              
               <div className={styles.projectLinks}>
                 {project.githubUrl && (
                   <a
@@ -267,17 +260,14 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
                 )}
               </div>
 
-              
               <div className={styles.scanLines} />
             </div>
 
-            
             <div className={styles.holographicBorder} />
           </div>
         ))}
       </div>
 
-      
       {selectedSkill && (
         <SkillModal
           skill={skillsData.find(s => s.id === selectedSkill)!}
@@ -285,7 +275,6 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
         />
       )}
 
-      
       {zoomModal.isOpen && (
         <div className={styles.zoomModal} onClick={closeZoomModal}>
           <div className={styles.zoomModalContent} onClick={(e) => e.stopPropagation()}>

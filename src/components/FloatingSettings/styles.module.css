@@ -68,7 +68,6 @@
   opacity: 0.6;
 }
 
-
 .settingsMenu {
   position: absolute;
   top: 70px;
@@ -86,7 +85,6 @@
   overflow-y: auto;
   overflow-x: hidden;
 }
-
 
 .settingsMenu::-webkit-scrollbar {
   width: 6px;
@@ -286,18 +284,17 @@
   }
 }
 
-
 @media (max-width: 768px) {
   .floatingSettings {
     top: 1rem;
     right: 1rem;
   }
-  
+
   .settingsButton {
     width: 50px;
     height: 50px;
   }
-  
+
   .settingsMenu {
     width: 260px;
     max-height: 60vh;
@@ -312,16 +309,15 @@
     max-height: 50vh;
     right: -20px;
   }
-  
+
   .menuHeader {
     font-size: 0.8rem;
   }
-  
+
   .sectionTitle {
     font-size: 0.7rem;
   }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   .floatingSettings,
@@ -329,15 +325,15 @@
   .settingsGlow {
     animation: none;
   }
-  
+
   .settingsButton:hover {
     transform: scale(1.1);
   }
-  
+
   .settingsIcon {
     transition: none;
   }
-  
+
   .settingsButton:hover .settingsIcon {
     transform: rotate(90deg);
   }

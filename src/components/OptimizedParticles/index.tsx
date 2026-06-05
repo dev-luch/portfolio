@@ -17,8 +17,8 @@ interface OptimizedParticlesProps {
   mobileOptimized?: boolean;
 }
 
-export const OptimizedParticles: React.FC<OptimizedParticlesProps> = ({ 
-  className = "", 
+export const OptimizedParticles: React.FC<OptimizedParticlesProps> = ({
+  className = "",
   count = 12,
   pauseWhenHidden = true,
   mobileOptimized = true
@@ -31,10 +31,10 @@ export const OptimizedParticles: React.FC<OptimizedParticlesProps> = ({
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -50,12 +50,12 @@ export const OptimizedParticles: React.FC<OptimizedParticlesProps> = ({
   }, [count, isMobile, mobileOptimized]);
 
   return (
-    <div 
+    <div
       className={`${styles.particles} ${className} ${animationClasses} ${isPaused ? styles.paused : ''}`}
     >
       {Array.from({ length: optimizedCount }, (_, index) => (
-        <div 
-          key={index} 
+        <div
+          key={index}
           className={`${styles.particle} ${styles[`particle${(index % 6) + 1}`]}`}
           style={{
             animationPlayState: isPaused ? 'paused' : 'running'

@@ -7,13 +7,13 @@ interface ScanlineProps {
   duration?: number;
 }
 
-export const Scanline = ({ 
-  className = "", 
-  delay = 0, 
-  duration = 3 
+export const Scanline = ({
+  className = "",
+  delay = 0,
+  duration = 3
 }: ScanlineProps) => {
   return (
-    <div 
+    <div
       className={`${styles.scanline} ${className}`}
       style={{
         animationDelay: `${delay}s`,

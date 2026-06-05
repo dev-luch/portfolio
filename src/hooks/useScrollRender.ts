@@ -49,25 +49,25 @@ export const useScrollRender = (options: UseScrollRenderOptions = {}): UseScroll
   const [shouldRender, setShouldRender] = useState(false);
   const [containerHeight, setContainerHeight] = useState<string>('100dvh');
   const [hasMeasured, setHasMeasured] = useState(false);
-  
+
   const ref = useRef<HTMLElement | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
   const observerRef = useRef<IntersectionObserver | undefined>(undefined);
 
   const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
     const entry = entries[0];
-    
+
     if (entry.isIntersecting) {
       setIsVisible(true);
       setShouldRender(true);
-      
+
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
         timeoutRef.current = undefined;
       }
     } else {
       setIsVisible(false);
-      
+
       if (unmountDelay > 0) {
         timeoutRef.current = setTimeout(() => {
           setShouldRender(false);
@@ -92,9 +92,9 @@ export const useScrollRender = (options: UseScrollRenderOptions = {}): UseScroll
           setHasMeasured(true);
         }
       };
-      
+
       const timeoutId = setTimeout(measureHeight, 100);
-      
+
       return () => clearTimeout(timeoutId);
     }
 

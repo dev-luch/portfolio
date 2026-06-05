@@ -1,7 +1,7 @@
 export const enUS = {
   nav: {
     home: "Home",
-    projects: "Projects", 
+    projects: "Projects",
     "professional-experience": "Professional Experience",
     skills: "Skills",
     contact: "Contact",

@@ -59,7 +59,7 @@ export const ParticleSystem: React.FC = () => {
         .map(particle => {
           let newX = particle.x + particle.vx;
           let newY = particle.y + particle.vy;
-          
+
           // Boundary checking - keep particles within canvas bounds
           if (newX < 0 || newX > canvas.width) {
             particle.vx = -particle.vx;
@@ -69,7 +69,7 @@ export const ParticleSystem: React.FC = () => {
             particle.vy = -particle.vy;
             newY = Math.max(0, Math.min(canvas.height, newY));
           }
-          
+
           return {
             ...particle,
             x: newX,
@@ -87,14 +87,14 @@ export const ParticleSystem: React.FC = () => {
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       particlesRef.current.forEach(particle => {
         ctx.save();
         ctx.globalAlpha = particle.opacity;
         ctx.fillStyle = particle.color;
         ctx.shadowBlur = 10;
         ctx.shadowColor = particle.color;
-        
+
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();

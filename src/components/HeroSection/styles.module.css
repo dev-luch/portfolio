@@ -5,7 +5,7 @@
   justify-content: center;
   padding: 8rem 0 8rem 0;
   overflow: hidden;
-  background: 
+  background:
     radial-gradient(2000px 1000px at 20% -20%, rgba(0, 240, 255, 0.15), transparent 70%),
     radial-gradient(1500px 800px at 80% 20%, rgba(60, 229, 252, 0.1), transparent 60%),
     radial-gradient(1200px 600px at 50% 100%, rgba(39, 174, 244, 0.08), transparent 50%),
@@ -94,7 +94,7 @@
   left: 0;
   width: 98%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -214,7 +214,7 @@
   border: 2px solid rgba(0, 240, 255, 0.6);
   background: transparent;
   animation: circleRotate 12s linear infinite;
-  box-shadow: 
+  box-shadow:
     0 0 20px rgba(0, 240, 255, 0.3),
     inset 0 0 20px rgba(0, 240, 255, 0.1);
 }
@@ -238,7 +238,7 @@
   border: 1px solid rgba(60, 229, 252, 0.5);
   background: transparent;
   animation: circleRotate 8s linear infinite reverse;
-  box-shadow: 
+  box-shadow:
     0 0 15px rgba(60, 229, 252, 0.2),
     inset 0 0 15px rgba(60, 229, 252, 0.05);
 }
@@ -264,7 +264,7 @@
 .profileImage {
   border-radius: 50%;
   border: 3px solid var(--glowing-border);
-  box-shadow: 
+  box-shadow:
     0 0 30px rgba(0, 240, 255, 0.6),
     0 0 60px rgba(0, 240, 255, 0.3);
   animation: imagePulse 10s ease-in-out infinite;
@@ -274,7 +274,7 @@
 
 .profileImage:hover {
   transform: scale(1.05);
-  box-shadow: 
+  box-shadow:
     0 0 40px rgba(0, 240, 255, 0.8),
     0 0 80px rgba(0, 240, 255, 0.4);
 }
@@ -744,12 +744,12 @@
 
 @keyframes imagePulse {
   0%, 90% {
-    box-shadow: 
+    box-shadow:
       0 0 30px rgba(0, 240, 255, 0.6),
       0 0 60px rgba(0, 240, 255, 0.3);
   }
   95%, 100% {
-    box-shadow: 
+    box-shadow:
       0 0 40px rgba(0, 240, 255, 0.8),
       0 0 80px rgba(0, 240, 255, 0.4);
   }
@@ -766,12 +766,12 @@
 
 @keyframes framePulse {
   0%, 90% {
-    box-shadow: 
+    box-shadow:
       0 0 30px rgba(0, 240, 255, 0.6),
       inset 0 0 30px rgba(0, 240, 255, 0.2);
   }
   95%, 100% {
-    box-shadow: 
+    box-shadow:
       0 0 50px rgba(0, 240, 255, 0.8),
       inset 0 0 50px rgba(0, 240, 255, 0.4);
   }
@@ -858,7 +858,7 @@
   .mainContent {
     gap: 2rem;
   }
-  
+
   .imageSection {
     margin-bottom: 2rem;
   }
@@ -868,67 +868,67 @@
   .heroSection {
     padding: 6rem 0 2rem 0;
   }
-  
+
   .heroContainer {
     gap: 2rem;
     padding: 0 1rem;
   }
-  
+
   .titleSection {
     margin-bottom: 2rem;
   }
-  
+
   .imageSection {
     margin-bottom: 1.5rem;
   }
-  
+
   .mainContent {
     gap: 1.5rem;
     padding: 0 1rem;
   }
-  
+
   .card {
     width: 100%;
   }
-  
+
   .descriptionCard {
     margin: 0 1rem;
   }
-  
+
   .metricGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .metricGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .circle1 {
     width: 250px;
     height: 250px;
   }
-  
+
   .circle2 {
     width: 200px;
     height: 200px;
   }
-  
+
   .circle3 {
     width: 150px;
     height: 150px;
   }
-  
+
   .circle4 {
     width: 100px;
     height: 100px;
   }
-  
+
   .profileImage {
     width: 150px;
     height: 150px;
   }
-  
+
   .gridBackground {
     animation: none;
   }
@@ -938,30 +938,30 @@
   .heroSection {
     padding: 5rem 0 1rem 0;
   }
-  
+
   .mainTitle {
     font-size: 2.5rem;
   }
-  
+
   .subtitle {
     font-size: 1rem;
     text-align: center;
     margin: 0 auto;
   }
-  
+
   .missionBadge {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
-  
+
   .card {
     padding: 1rem;
   }
-  
+
   .descriptionCard {
     padding: 1.5rem;
   }
-  
+
   .gridBackground {
     animation: none;
   }
@@ -1058,7 +1058,7 @@
     top: 8px;
     right: 8px;
   }
-  
+
   .rankText {
     font-size: 1rem;
   }
@@ -1071,7 +1071,7 @@
     top: 8px;
     right: 15px;
   }
-  
+
   .rankText {
     font-size: 0.9rem;
   }
@@ -1095,7 +1095,7 @@
   .descriptionText {
     animation: none;
   }
-  
+
   .mainTitle {
     text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
   }

@@ -10,14 +10,12 @@
   transform: translateZ(0);
 }
 
-
 @media (max-width: 768px) {
   .particleSystem {
-    
+
     filter: blur(0.5px);
   }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   .particleSystem {

@@ -18,10 +18,10 @@ export function LangProvider({
     }
     return language;
   });
-  
+
   const dictionary = getDictionary(lang);
   const t = (key: string) => key.split('.').reduce((acc: any, part: any) => acc?.[part], dictionary) ?? key;
-  
+
   const changeLanguage = (newLang: Lang) => {
     if (typeof document !== 'undefined') {
       document.documentElement.lang = newLang;
@@ -37,12 +37,12 @@ export function LangProvider({
           setLang(docLang);
         }
       });
-      
+
       observer.observe(document.documentElement, {
         attributes: true,
         attributeFilter: ['lang']
       });
-      
+
       return () => observer.disconnect();
     }
   }, [lang]);

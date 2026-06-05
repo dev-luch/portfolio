@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 100dvh;
   padding: 6rem 2rem;
-  background: 
+  background:
     radial-gradient(800px 400px at 50% 0%, rgba(0, 240, 255, 0.06), transparent 70%),
     linear-gradient(180deg, transparent 0%, rgba(0, 240, 255, 0.03) 50%, transparent 100%);
   position: relative;
@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     linear-gradient(45deg, transparent 30%, rgba(0, 240, 255, 0.01) 50%, transparent 70%);
   animation: experienceBackgroundShift 10s ease-in-out infinite;
   z-index: 1;
@@ -69,9 +69,9 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, 
-    var(--glowing-border) 0%, 
-    rgba(0, 240, 255, 0.6) 50%, 
+  background: linear-gradient(90deg,
+    var(--glowing-border) 0%,
+    rgba(0, 240, 255, 0.6) 50%,
     rgba(60, 229, 252, 0.4) 100%);
   border-radius: 2px;
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
@@ -252,7 +252,7 @@
   background: linear-gradient(135deg, #1a4d3a, #2d7a4f);
   border-color: #4ade80;
   opacity: 1;
-  box-shadow: 
+  box-shadow:
     0 0 20px rgba(74, 222, 128, 0.4),
     0 0 40px rgba(74, 222, 128, 0.2),
     inset 0 0 10px rgba(74, 222, 128, 0.1);
@@ -268,7 +268,7 @@
   border-color: var(--glowing-border);
   opacity: 1;
   animation: currentPulse 2s ease-in-out infinite;
-  box-shadow: 
+  box-shadow:
     0 0 25px rgba(0, 240, 255, 0.6),
     0 0 50px rgba(0, 240, 255, 0.3),
     inset 0 0 15px rgba(0, 240, 255, 0.1);
@@ -322,13 +322,13 @@
 
 @keyframes currentPulse {
   0%, 100% {
-    box-shadow: 
+    box-shadow:
       0 0 25px rgba(0, 240, 255, 0.6),
       0 0 50px rgba(0, 240, 255, 0.3),
       inset 0 0 15px rgba(0, 240, 255, 0.1);
   }
   50% {
-    box-shadow: 
+    box-shadow:
       0 0 35px rgba(0, 240, 255, 0.8),
       0 0 70px rgba(0, 240, 255, 0.5),
       inset 0 0 20px rgba(0, 240, 255, 0.2);
@@ -383,11 +383,11 @@
     padding: 2rem 1rem;
     min-height: 100vh;
   }
-  
+
   .sectionTitle {
     font-size: 1.8rem;
   }
-  
+
   .timeline {
     flex-direction: column;
     gap: 1rem;
@@ -397,7 +397,7 @@
     width: 100%;
     position: relative;
   }
-  
+
   .timelineLine {
     left: 50%;
     top: 0;
@@ -407,7 +407,7 @@
     transform: translateX(-50%);
     z-index: 1;
   }
-  
+
   .timelineItem {
     position: relative;
     cursor: pointer;
@@ -416,17 +416,17 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .timelineItem:hover {
     transform: translateY(-5px);
   }
-  
+
   .timelineMarker {
     width: 50px;
     height: 50px;
     flex-shrink: 0;
   }
-  
+
   .popoverContent {
     bottom: auto;
     top: calc(100% + 15px);
@@ -450,17 +450,16 @@
     border-top: none;
     border-bottom: 7px solid rgba(15, 23, 42, 1);
   }
-  
+
   .popoverHeader {
     margin-bottom: 0.75rem;
     padding-bottom: 0.75rem;
   }
-  
+
   .popoverBody {
     gap: 0.75rem;
   }
-  
-  
+
   .timelineItem.completed .timelineMarker {
     width: 50px;
     height: 50px;
@@ -469,7 +468,7 @@
     opacity: 1;
     box-shadow: 0 0 8px rgba(74, 222, 128, 0.3);
   }
-  
+
   .timelineItem.current .timelineMarker {
     width: 50px;
     height: 50px;
@@ -478,7 +477,7 @@
     opacity: 1;
     box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
   }
-  
+
   .timelineItem.future .timelineMarker {
     width: 50px;
     height: 50px;
@@ -494,30 +493,30 @@
     padding: 2rem 0.5rem;
     min-height: 100vh;
   }
-  
+
   .sectionTitle {
     font-size: 1.8rem;
   }
-  
+
   .timeline {
     gap: 1.5rem;
     padding: 1rem 0;
   }
-  
+
   .timelineItem {
     padding: 0.75rem;
     margin-bottom: 0.75rem;
   }
-  
+
   .timelineMarker {
     width: 45px;
     height: 45px;
   }
-  
+
   .popoverTitle {
     font-size: 1rem;
   }
-  
+
   .popoverDescription,
   .popoverResponsibilities {
     font-size: 0.85rem;
@@ -533,24 +532,24 @@
   .popoverContent {
     animation: none;
   }
-  
+
   .experienceSection::before {
     opacity: 0.3;
   }
-  
+
   .sectionHeader:not(.reveal),
   .timeline:not(.reveal) {
     opacity: 1;
     transform: none;
   }
-  
+
   .timelineItem.current .timelineMarker {
-    box-shadow: 
+    box-shadow:
       0 0 25px rgba(0, 240, 255, 0.6),
       0 0 50px rgba(0, 240, 255, 0.3),
       inset 0 0 15px rgba(0, 240, 255, 0.1);
   }
-  
+
   .timelineItem.current .markerIcon {
     text-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
     transform: scale(1);

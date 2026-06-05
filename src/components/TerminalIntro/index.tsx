@@ -13,7 +13,7 @@ interface TerminalIntroProps {
 export const TerminalIntro = ({ onComplete }: TerminalIntroProps) => {
   const { t } = useLang();
   const { animationClasses } = useAnimationClasses();
-  
+
   const terminalLines = useMemo(() => [
     t("terminal.lines.0"),
     t("terminal.lines.1"),
@@ -34,11 +34,11 @@ export const TerminalIntro = ({ onComplete }: TerminalIntroProps) => {
 
   useEffect(() => {
     if (!isMounted) return;
-    
+
     if (currentLine < terminalLines.length) {
       const line = terminalLines[currentLine];
       let charIndex = 0;
-      
+
       const typeInterval = setInterval(() => {
         if (charIndex <= line.length) {
           setCurrentText(line.substring(0, charIndex));
@@ -61,15 +61,14 @@ export const TerminalIntro = ({ onComplete }: TerminalIntroProps) => {
 
   return (
     <div className={`${styles.terminalIntro} ${animationClasses}`}>
-      
+
       <div className={styles.background}>
         <div className={styles.gridOverlay}></div>
          <Particles count={8} />
       </div>
 
-      
       <div className={styles.container}>
-        
+
         <div className={styles.terminal}>
           <div className={styles.terminalHeader}>
             <div className={styles.terminalButtons}>
@@ -82,7 +81,7 @@ export const TerminalIntro = ({ onComplete }: TerminalIntroProps) => {
               <span>{t("terminal.title")}</span>
             </div>
           </div>
-          
+
           <div className={styles.terminalBody}>
             <div className={styles.terminalContent}>
               {terminalLines.slice(0, currentLine).map((line, index: number) => (
@@ -91,7 +90,7 @@ export const TerminalIntro = ({ onComplete }: TerminalIntroProps) => {
                   <span className={styles.command}>{line.substring(2)}</span>
                 </div>
               ))}
-              
+
               {currentLine < terminalLines.length && (
                 <div className={styles.terminalLine}>
                   <span className={styles.prompt}>&gt;</span>
@@ -99,7 +98,7 @@ export const TerminalIntro = ({ onComplete }: TerminalIntroProps) => {
                   <span className={styles.cursor}>_</span>
                 </div>
               )}
-              
+
               {!isTyping && (
                 <div className={styles.terminalLine}>
                   <span className={styles.prompt}>&gt;</span>
@@ -109,7 +108,7 @@ export const TerminalIntro = ({ onComplete }: TerminalIntroProps) => {
             </div>
           </div>
         </div>
-        
+
         {!isTyping && (
           <div className={styles.enterButton}>
             <button onClick={onComplete} className={styles.enterBtn}>

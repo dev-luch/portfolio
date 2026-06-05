@@ -1,7 +1,7 @@
 export const ptBR = {
   nav: {
     home: "Arquivo do agente",
-    projects: "Projetos", 
+    projects: "Projetos",
     "professional-experience": "Experiência Profissional",
     skills: "Habilidades",
     contact: "Contato",

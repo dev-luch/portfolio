@@ -33,21 +33,20 @@ export const HeroSection = () => {
 
   return (
     <section className={`${styles.heroSection} ${animationClasses}`} id="hero">
-      
-      <OptimizedParticles 
-        count={12} 
+
+      <OptimizedParticles
+        count={12}
         pauseWhenHidden={true}
         mobileOptimized={true}
       />
 
-      
       <div className={styles.gridBackground}></div>
 
       <Container flexDirection="column" className={styles.heroContainer}>
-        
+
         <div className={styles.imageSection}>
           <div className={styles.imageContainer} ref={imageRef as any}>
-            
+
             <div className={`${styles.imageWrapper} ${imageVisible ? styles.reveal : ''}`}>
               <Image
                 src="/luch.webp"
@@ -62,7 +61,6 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        
         <div className={styles.titleSection} ref={titleRef as any}>
           <div className={`${styles.titleWrapper} ${titleVisible ? styles.reveal : ''}`}>
             <Text family="orbitron" size="xl" className={styles.mainTitle}>
@@ -75,7 +73,7 @@ export const HeroSection = () => {
           </Text>
         </div>
         <div className={styles.descriptionSection}>
-          
+
           <div className={`${styles.descriptionCard} ${missionVisible ? styles.reveal : ''}`} ref={missionRef as any}>
             <div className={styles.descriptionHeader}>
               <Star size={16} className={styles.descriptionIcon} />
@@ -86,10 +84,8 @@ export const HeroSection = () => {
             </p>
           </div>
 
-          
           <div className={styles.mainContent}>
 
-            
             <div className={styles.infoCards}>
               <div className={`${styles.card} ${statusVisible ? styles.reveal : ''}`} ref={statusRef as any}>
                 <div className={styles.cardHeader}>
@@ -159,7 +155,6 @@ export const HeroSection = () => {
         </div>
       </Container>
 
-      
       <FloatingSettings />
     </section>
   );

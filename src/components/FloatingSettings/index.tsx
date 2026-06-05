@@ -26,8 +26,8 @@ export const FloatingSettings = () => {
 
   return (
     <div className={styles.floatingSettings}>
-      
-      <button 
+
+      <button
         className={styles.settingsButton}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Configurações"
@@ -36,7 +36,6 @@ export const FloatingSettings = () => {
         <div className={styles.settingsGlow}></div>
       </button>
 
-      
       {isOpen && (
         <div className={styles.settingsMenu}>
           <div className={styles.menuHeader}>
@@ -44,7 +43,6 @@ export const FloatingSettings = () => {
             <span>CONFIGURAÇÕES</span>
           </div>
 
-          
           <div className={styles.settingsSection}>
             <div className={styles.sectionTitle}>
               <Globe size={16} />
@@ -58,11 +56,11 @@ export const FloatingSettings = () => {
                   onClick={() => handleLanguageChange(code)}
                 >
                   <div className={styles.flagContainer}>
-                    <Image 
-                      src={flag} 
-                      alt={name} 
-                      width={24} 
-                      height={18} 
+                    <Image
+                      src={flag}
+                      alt={name}
+                      width={24}
+                      height={18}
                       className={styles.flag}
                     />
                   </div>
@@ -73,7 +71,6 @@ export const FloatingSettings = () => {
             </div>
           </div>
 
-          
           <div className={styles.settingsSection}>
             <div className={styles.sectionTitle}>
               <Monitor size={16} />
@@ -88,7 +85,7 @@ export const FloatingSettings = () => {
                 <span className={styles.themeText}>Claro</span>
                 {theme === 'light' && <Check size={16} className={styles.checkIcon} />}
               </button>
-              
+
               <button
                 className={`${styles.themeOption} ${theme === 'dark' ? styles.active : ''}`}
                 onClick={() => setTheme('dark')}
@@ -97,7 +94,7 @@ export const FloatingSettings = () => {
                 <span className={styles.themeText}>Escuro</span>
                 {theme === 'dark' && <Check size={16} className={styles.checkIcon} />}
               </button>
-              
+
               <button
                 className={`${styles.themeOption} ${theme === 'system' ? styles.active : ''}`}
                 onClick={() => setTheme('system')}
@@ -109,7 +106,6 @@ export const FloatingSettings = () => {
             </div>
           </div>
 
-          
           <div className={styles.settingsSection}>
             <div className={styles.sectionTitle}>
               <Zap size={16} />
@@ -124,7 +120,7 @@ export const FloatingSettings = () => {
                 <span className={styles.themeText}>Flutuação, Brilho & Grid</span>
                 {preferences.enableFloatAndGlowAnimations && <Check size={16} className={styles.checkIcon} />}
               </button>
-              
+
               <button
                 className={`${styles.themeOption} ${preferences.enableParticleAnimations ? styles.active : ''}`}
                 onClick={toggleParticleAnimations}
@@ -133,15 +129,14 @@ export const FloatingSettings = () => {
                 <span className={styles.themeText}>Partículas</span>
                 {preferences.enableParticleAnimations && <Check size={16} className={styles.checkIcon} />}
               </button>
-              
+
             </div>
           </div>
         </div>
       )}
 
-      
       {isOpen && (
-        <div 
+        <div
           className={styles.overlay}
           onClick={() => setIsOpen(false)}
         />

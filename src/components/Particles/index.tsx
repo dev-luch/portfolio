@@ -8,9 +8,9 @@ interface ParticlesProps {
   count?: number;
 }
 
-export const Particles: React.FC<ParticlesProps> = ({ 
-  className = "", 
-  count = 12 
+export const Particles: React.FC<ParticlesProps> = ({
+  className = "",
+  count = 12
 }) => {
   const { animationClasses } = useAnimationClasses();
 

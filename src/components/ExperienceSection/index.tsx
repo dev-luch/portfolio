@@ -45,7 +45,7 @@ export const ExperienceSection = () => {
         (ref) => ref && ref.contains(target)
       );
       const clickedTrigger = target.closest(`.${styles.timelineItem}`);
-      
+
       if (!clickedPopover && !clickedTrigger) {
         setOpenPopover(null);
       }
@@ -66,7 +66,7 @@ export const ExperienceSection = () => {
 
       <div className={`${styles.timeline} ${experienceVisible ? styles.reveal : ''}`}>
         <div className={styles.timelineLine}></div>
-        
+
         {experiences.map((experience) => {
           const IconComponent = experience.icon;
           const isOpen = openPopover === experience.id;
@@ -75,7 +75,7 @@ export const ExperienceSection = () => {
               key={experience.id}
               className={`${styles.timelineItemWrapper} ${isOpen ? styles.timelineItemWrapperOpen : ""}`}
             >
-              <button 
+              <button
                 type="button"
                 className={`${styles.timelineItem} ${styles[experience.status]}`}
                 aria-label={t(experience.title)}
@@ -86,7 +86,7 @@ export const ExperienceSection = () => {
                 </div>
               </button>
               {isOpen && (
-                <div 
+                <div
                   ref={(el) => {
                     popoverRefs.current[experience.id] = el;
                   }}

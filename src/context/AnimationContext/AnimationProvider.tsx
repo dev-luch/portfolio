@@ -41,7 +41,6 @@ export function AnimationProvider({ children }: { children: React.ReactNode }) {
     setPreferences(prev => ({ ...prev, enableParticleAnimations: !prev.enableParticleAnimations }));
   };
 
-
   const resetToDefaults = () => {
     setPreferences(defaultPreferences);
   };

@@ -19,7 +19,7 @@ export const OptimizedParticleSystem: React.FC = () => {
     life: number;
     maxLife: number;
   }>>([]);
-  
+
   const [isMobile, setIsMobile] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -27,10 +27,10 @@ export const OptimizedParticleSystem: React.FC = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -39,7 +39,7 @@ export const OptimizedParticleSystem: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -75,12 +75,12 @@ export const OptimizedParticleSystem: React.FC = () => {
 
     const updateParticles = () => {
       if (isPaused) return;
-      
+
       particlesRef.current = particlesRef.current
         .map(particle => {
           let newX = particle.x + particle.vx;
           let newY = particle.y + particle.vy;
-          
+
           // Boundary checking - keep particles within canvas bounds
           if (newX < 0 || newX > canvas.width) {
             particle.vx = -particle.vx;
@@ -90,7 +90,7 @@ export const OptimizedParticleSystem: React.FC = () => {
             particle.vy = -particle.vy;
             newY = Math.max(0, Math.min(canvas.height, newY));
           }
-          
+
           return {
             ...particle,
             x: newX,
@@ -108,14 +108,14 @@ export const OptimizedParticleSystem: React.FC = () => {
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       particlesRef.current.forEach(particle => {
         ctx.save();
         ctx.globalAlpha = particle.opacity;
         ctx.fillStyle = particle.color;
         ctx.shadowBlur = isMobile ? 5 : 10;
         ctx.shadowColor = particle.color;
-        
+
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();
@@ -145,7 +145,7 @@ export const OptimizedParticleSystem: React.FC = () => {
   }, [isPaused, isMobile]);
 
   return (
-    <div 
+    <div
       className={`${styles.particleSystem} ${animationClasses}`}
       style={{
         position: 'absolute',

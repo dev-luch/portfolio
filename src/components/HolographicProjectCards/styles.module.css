@@ -1,7 +1,7 @@
 .holographicContainer {
   position: relative;
   min-height: 100vh;
-  background: 
+  background:
     radial-gradient(1000px 500px at 50% 0%, rgba(0, 240, 255, 0.04), transparent 70%),
     radial-gradient(800px 400px at 0% 50%, rgba(60, 229, 252, 0.02), transparent 60%),
     linear-gradient(135deg, rgba(0, 240, 255, 0.01) 0%, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
@@ -9,7 +9,6 @@
   overflow: hidden;
   padding: 2rem;
 }
-
 
 .backgroundEffects {
   position: absolute;
@@ -27,7 +26,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -106,7 +105,6 @@
   100% { transform: translate(-200px, -200px); }
 }
 
-
 .header {
   position: relative;
   z-index: 10;
@@ -119,7 +117,7 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: #ffffff;
-  text-shadow: 
+  text-shadow:
     0 0 10px rgba(99, 102, 241, 0.8),
     0 0 20px rgba(236, 72, 153, 0.6),
     0 0 30px rgba(34, 197, 94, 0.4),
@@ -149,7 +147,6 @@
   font-weight: 400;
 }
 
-
 .cardsGrid {
   position: relative;
   z-index: 5;
@@ -161,7 +158,6 @@
   padding: 2rem 0;
 }
 
-
 .holographicCard {
   position: relative;
   background: rgba(15, 15, 35, 0.3);
@@ -169,7 +165,7 @@
   padding: 0;
   backdrop-filter: blur(20px);
   border: 1px solid rgba(99, 102, 241, 0.2);
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(99, 102, 241, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -189,7 +185,7 @@
 
 .holographicCard:hover {
   transform: perspective(1000px) rotateX(-5deg) rotateY(5deg) translateY(-10px) scale(1.02);
-  box-shadow: 
+  box-shadow:
     0 30px 60px rgba(0, 0, 0, 0.6),
     0 0 0 2px var(--card-color, #6366f1),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -209,7 +205,6 @@
     transform: translateY(0) scale(1);
   }
 }
-
 
 .holographicGlow {
   position: absolute;
@@ -234,7 +229,6 @@
   50% { opacity: 0.6; transform: scale(1.1); }
 }
 
-
 .cardContent {
   position: relative;
   z-index: 10;
@@ -243,7 +237,6 @@
   display: flex;
   flex-direction: column;
 }
-
 
 .projectHeader {
   display: flex;
@@ -308,7 +301,6 @@
   50% { opacity: 0.5; }
 }
 
-
 .projectDescription {
   margin-bottom: 1.5rem;
 }
@@ -318,7 +310,6 @@
   line-height: 1.6;
   font-size: 0.95rem;
 }
-
 
 .projectPreviews {
   margin-bottom: 1.5rem;
@@ -448,7 +439,6 @@
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
 }
 
-
 .technologies {
   margin-bottom: 1.5rem;
 }
@@ -487,7 +477,6 @@
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-
 .projectLinks {
   display: flex;
   gap: 1rem;
@@ -519,7 +508,6 @@
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
 }
 
-
 .scanLines {
   position: absolute;
   top: 0;
@@ -547,7 +535,6 @@
   100% { background-position: 200% 0; }
 }
 
-
 .holographicBorder {
   position: absolute;
   top: 0;
@@ -555,11 +542,11 @@
   right: 0;
   bottom: 0;
   border-radius: 20px;
-  background: linear-gradient(45deg, 
-    transparent, 
-    rgba(99, 102, 241, 0.1), 
-    transparent, 
-    rgba(236, 72, 153, 0.1), 
+  background: linear-gradient(45deg,
+    transparent,
+    rgba(99, 102, 241, 0.1),
+    transparent,
+    rgba(236, 72, 153, 0.1),
     transparent
   );
   background-size: 400% 400%;
@@ -576,7 +563,6 @@
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
-
 
 .zoomModal {
   position: fixed;
@@ -613,7 +599,7 @@
   border: 2px solid rgba(99, 102, 241, 0.3);
   border-radius: 20px;
   padding: 1rem;
-  box-shadow: 
+  box-shadow:
     0 25px 50px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(99, 102, 241, 0.1);
   backdrop-filter: blur(20px);
@@ -670,7 +656,6 @@
   transform: scale(1.02);
 }
 
-
 [data-theme="light"] .zoomModal {
   background: rgba(0, 0, 0, 0.9);
 }
@@ -678,7 +663,7 @@
 [data-theme="light"] .zoomModalContent {
   background: rgba(10, 15, 26, 0.95);
   border: 2px solid rgba(39, 174, 244, 0.3);
-  box-shadow: 
+  box-shadow:
     0 25px 50px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(39, 174, 244, 0.2);
 }
@@ -693,14 +678,13 @@
   background: #27AEF4;
 }
 
-
 [data-theme="light"] .holographicContainer {
   background: linear-gradient(135deg, #1033AD 0%, #0A1E5E 50%, #000000 100%);
   color: #ffffff;
 }
 
 [data-theme="light"] .gridPattern {
-  background-image: 
+  background-image:
     linear-gradient(rgba(39, 174, 244, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(39, 174, 244, 0.1) 1px, transparent 1px);
 }
@@ -719,7 +703,7 @@
 
 [data-theme="light"] .title {
   color: #ffffff;
-  text-shadow: 
+  text-shadow:
     0 0 10px rgba(39, 174, 244, 0.8),
     0 0 20px rgba(60, 229, 252, 0.6),
     0 0 30px rgba(198, 234, 249, 0.4);
@@ -733,7 +717,7 @@
 [data-theme="light"] .holographicCard {
   background: rgba(10, 15, 26, 0.85);
   border: 1px solid rgba(39, 174, 244, 0.3);
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(39, 174, 244, 0.2);
 }
@@ -778,35 +762,34 @@
   border-color: #27AEF4;
 }
 
-
 @media (max-width: 768px) {
   .holographicContainer {
     padding: 1rem;
   }
-  
+
   .title {
     font-size: 2.5rem;
   }
-  
+
   .cardsGrid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .holographicCard {
     max-width: 100%;
   }
-  
+
   .cardContent {
     padding: 1.5rem;
   }
-  
+
   .projectHeader {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
+
   .projectLinks {
     flex-direction: column;
   }
@@ -816,19 +799,19 @@
   .title {
     font-size: 2rem;
   }
-  
+
   .cardContent {
     padding: 1rem;
   }
-  
+
   .projectTitle {
     font-size: 1.2rem;
   }
-  
+
   .techList {
     gap: 0.3rem;
   }
-  
+
   .techChip {
     font-size: 0.75rem;
     padding: 0.3rem 0.6rem;
