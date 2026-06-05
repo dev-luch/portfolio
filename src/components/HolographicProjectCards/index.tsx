@@ -80,19 +80,15 @@ export const HolographicProjectCards: React.FC<HolographicProjectCardsProps> = (
   };
 
   const openZoomModal = (image: string, alt: string) => {
-    setZoomModal({
-      isOpen: true,
-      image,
-      alt
-    });
+    setZoomModal({ isOpen: true, image, alt });
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
   };
 
   const closeZoomModal = () => {
-    setZoomModal({
-      isOpen: false,
-      image: '',
-      alt: ''
-    });
+    setZoomModal({ isOpen: false, image: '', alt: '' });
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   };
 
   return (
