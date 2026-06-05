@@ -9,6 +9,7 @@ export interface Skill {
   percentage: number;
   descriptionKey: string;
   startDate: string;
+  endDate?: string;
   projects: string[];
   certifications?: string[];
   relatedSkills: string[];
@@ -20,7 +21,7 @@ export interface Skill {
 export const getSkillTranslation = (skill: Skill, t: (key: string) => string, lang: Lang = "en-US") => ({
   ...skill,
   description: t(skill.descriptionKey),
-  experience: getSkillDuration(skill.startDate, lang),
+  experience: getSkillDuration(skill.startDate, lang, skill.endDate),
   projects: skill.projects.map(project =>
     project.startsWith('skills.') ? t(project) : project
   )
@@ -301,6 +302,7 @@ export const skillsData: Skill[] = [
     percentage: 80,
     descriptionKey: 'skills.descriptions.react-native',
     startDate: '2025-03-01',
+    endDate: '2026-03-01',
     projects: ['G4mix'],
     relatedSkills: ['React', 'JavaScript', 'Mobile'],
     icon: '/developer-icons/react.svg',
@@ -315,6 +317,7 @@ export const skillsData: Skill[] = [
     percentage: 80,
     descriptionKey: 'skills.descriptions.expo',
     startDate: '2025-03-01',
+    endDate: '2026-03-01',
     projects: ['G4mix'],
     relatedSkills: ['React', 'JavaScript', 'Mobile'],
     icon: '/developer-icons/react.svg',
@@ -328,7 +331,8 @@ export const skillsData: Skill[] = [
     rank: 'E',
     percentage: 50,
     descriptionKey: 'skills.descriptions.flutter',
-    startDate: '2025-07-01',
+    startDate: '2025-06-01',
+    endDate: '2026-06-01',
     projects: ['skills.projects.learning-projects'],
     relatedSkills: ['Dart', 'Mobile', 'UI/UX'],
     icon: '/developer-icons/flutter.svg',

@@ -207,7 +207,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
                       <div className={styles.skillName}>{skill.name}</div>
                       <div className={styles.skillDetails}>
                         <div className={styles.skillRank}>{skill.rank}</div>
-                        <div className={styles.skillExperience}>{getSkillDuration(skill.startDate, lang)}</div>
+                        <div className={styles.skillExperience}>{getSkillDuration(skill.startDate, lang, skill.endDate)}</div>
                         <div className={styles.skillPercentage}>{skill.percentage}%</div>
                       </div>
                     </div>

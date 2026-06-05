@@ -3,11 +3,6 @@ html {
   scroll-behavior: smooth;
 }
 
-* {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
 /* Reduzir animações em dispositivos com preferência por movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
   * {

@@ -12,12 +12,12 @@ export function calculateAge(lang: Lang): string {
   return lang === "pt-BR" ? `${age} anos` : `${age} years old`;
 }
 
-export function getSkillDuration(startDate: string, lang: Lang): string {
+export function getSkillDuration(startDate: string, lang: Lang, endDate?: string): string {
   const start = new Date(startDate);
-  const now = new Date();
+  const end = endDate ? new Date(Math.min(Date.now(), new Date(endDate).getTime())) : new Date();
   const totalMonths =
-    (now.getFullYear() - start.getFullYear()) * 12 +
-    (now.getMonth() - start.getMonth());
+    (end.getFullYear() - start.getFullYear()) * 12 +
+    (end.getMonth() - start.getMonth());
   if (totalMonths >= 12) {
     const years = Math.floor(totalMonths / 12);
     return lang === "pt-BR" ? `${years}+ anos` : `${years}+ years`;
